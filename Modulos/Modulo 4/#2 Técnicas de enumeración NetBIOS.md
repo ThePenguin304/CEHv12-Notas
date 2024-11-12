@@ -156,4 +156,4 @@ Net View es un comando de Windows que permite ver los recursos compartidos en un
 >El comando anterior muestra todos los recursos compartidos en el dominio.
 
 `net view /domain:<domain name>`
-El comando anterior muestra todos los recursos compartidos en el dominio especificado.
+>El comando anterior muestra todos los recursos compartidos en el dominio especificado.
