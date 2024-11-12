@@ -136,3 +136,5 @@ El protocolo SNMP se utiliza para gestionar y supervisar dispositivos de red. Si
 
 > Este puerto permite la comunicación de sesión entre dos dispositivos, proporcionando una comunicación basada en conexión (como TCP/IP).
 Función: Es el puerto utilizado para compartir archivos e impresoras en una red local utilizando el protocolo SMB (Server Message Block) a través de NetBIOS. Este servicio es esencial para la conexión de dispositivos y la transferencia de archivos en sistemas Windows.
+
+Es recomendable bloquear estos puertos (137-139) en redes externas (Internet) por razones de seguridad, ya que pueden ser explotados para realizar ataques de enumeración de recursos compartidos, acceso no autorizado y otras actividades maliciosas.
