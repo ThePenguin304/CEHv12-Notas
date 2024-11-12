@@ -23,13 +23,11 @@ Módulo basado en *identificar y recopilar información detallada de sistemas y 
    
    >Explicar las diferentes técnicas para la enumeración NetBIOS, SNMP, LDAP y Active Directory (AD), NTP, NFS, SMTP y DNS
    
-   > Explicar otras técnicas de enumeración como IPsec, VoIP, RPC, Linux/Unix, Telnet, FTP, TFTP, SMB, IPv6 y BGP
+   >Explicar otras técnicas de enumeración como IPsec, VoIP, RPC, Linux/Unix, Telnet, FTP, TFTP, SMB, IPv6 y BGP
    
-   > Aplicar contramedidas de enumeración
+   >Aplicar contramedidas de enumeración
 
-
-   
- ▪  ▪ Explicar las diferentes técnicas para la enumeración SNMP ▪ Explicar las diferentes técnicas para la enumeración LDAP y Active Directory (AD) ▪ Explicar las diferentes técnicas para la enumeración NTP ▪ Explicar las diferentes técnicas para la enumeración NFS ▪ Explicar las diferentes técnicas para la enumeración SMTP y DNS ▪ 
+ 
 ▪ Aplicar contramedidas de enumeración
 ## 
 verview of Cloud Computing
