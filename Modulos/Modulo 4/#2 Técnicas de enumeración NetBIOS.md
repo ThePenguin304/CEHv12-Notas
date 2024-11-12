@@ -24,48 +24,21 @@ Objectivo de la enumeración:
 
 Es una utilidad en Windows que permite a los administradores de red ver la tabla de nombres NetBIOS de un equipo remoto.
 
-**` Name | NetBIOS Code | Type | Information Obtained `**
-
-` <host name> | <00> | UNIQUE | Hostname `
-
-`<domain> | <00> | GROUP | Domain name`
-
-`<host name> | <03> | UNIQUE | Messenger service running for the computer`
-
-`<username> | <03> | UNIQUE | Messenger service running for the logged-in user`
-
-`<host name> | <20> | UNIQUE | Server service running`
-
-`<domain> | <1D> | GROUP | Master browser name for the subnet`
-
-`<domain> | <1B> | UNIQUE | Domain master browser name, which identifies the primary domain controller (PDC) for the domain`
-
-`<domain> | <1E> | GROUP | Browser service election`
-
 Comandos útiles:
-- -a < NombreRemoto >
-> Muestra la tabla de nombres NetBIOS de un equipo remoto, donde NombreRemoto es el nombre de equipo NetBIOS del equipo remoto
-- -A < Dirección IP >
->Muestra la tabla de nombres NetBIOS de un equipo remoto, especificada por la dirección IP (en notación decimal con puntos) del equipo remoto
-- -c
->Enumera el contenido de la caché de nombres NetBIOS, la tabla de nombres NetBIOS y sus direcciones IP resueltas
-- -n
->Muestra los nombres registrados localmente por aplicaciones NetBIOS como el servidor y el redirector
-- -r
->Muestra un recuento de todos los nombres resueltos por un servidor de difusión o WINS
-- -R
->Purga la caché de nombres y vuelve a cargar todas las entradas etiquetadas con #PRE del archivo Lmhosts
-- -RR
->Libera y vuelve a registrar todos los nombres con el servidor de nombres
-- -s
->Enumera la tabla de sesiones NetBIOS convirtiendo las direcciones IP de destino en nombres NetBIOS de computadora
-- -S
->Enumera las sesiones NetBIOS actuales y su estado con las direcciones IP
-- Interval
->Vuelve a mostrar las estadísticas seleccionadas, deteniéndose en cada visualización durante la cantidad de segundos especificada en el intervalo
+- -a < NombreRemoto >. Muestra la tabla de nombres NetBIOS de un equipo remoto, donde NombreRemoto es el nombre de equipo NetBIOS del equipo remoto
+- -A < Dirección IP >. Muestra la tabla de nombres NetBIOS de un equipo remoto, especificada por la dirección IP (en notación decimal con puntos) del equipo remoto
+- -c. Enumera el contenido de la caché de nombres NetBIOS, la tabla de nombres NetBIOS y sus direcciones IP resueltas
+- -n. Muestra los nombres registrados localmente por aplicaciones NetBIOS como el servidor y el redirector
+- -r. Muestra un recuento de todos los nombres resueltos por un servidor de difusión o WINS
+- -R. Purga la caché de nombres y vuelve a cargar todas las entradas etiquetadas con #PRE del archivo Lmhosts
+- -RR. Libera y vuelve a registrar todos los nombres con el servidor de nombres
+- -s. Enumera la tabla de sesiones NetBIOS convirtiendo las direcciones IP de destino en nombres NetBIOS de computadora
+- -S. Enumera las sesiones NetBIOS actuales y su estado con las direcciones IP
+- Interval. Vuelve a mostrar las estadísticas seleccionadas, deteniéndose en cada visualización durante la cantidad de segundos especificada en el intervalo
 
 Ejemplo:
-nbtstat -A 192.168.1.10 -r -c -s
+` nbtstat -A 192.168.1.10 -r -c -s `
+
 >-A 192.168.1.10: Consulta la tabla de nombres de NetBIOS en el equipo con dirección IP 192.168.1.10.
 
 >-r: Muestra las estadísticas de resolución de nombres NetBIOS.
@@ -74,63 +47,22 @@ nbtstat -A 192.168.1.10 -r -c -s
 
 >-s: Muestra las sesiones de NetBIOS activas y el estado de cada conexión.
 
-Resultado de la consulta  ` nbtstat -A 192.168.1.10 -r -c -s `
+### NetBIOS Tools
 
->
-**` NetBIOS Remote Machine Name Table `**
->
-`    Name               Type         Status `
+Las herramientas de enumeración NetBIOS exploran y escanean una red dentro de un rango determinado de direcciones IP y listas de computadoras para identificar fallas o vulnerabilidades de seguridad en los sistemas en red. Estas herramientas también enumeran sistemas operativos (OS), usuarios, grupos, identificadores de seguridad (SID), políticas de contraseñas, servicios, paquetes de servicios y revisiones, recursos compartidos NetBIOS, transportes, sesiones, discos y registros de eventos de seguridad, etc.
 
-`    WORKGROUP    <00>  GROUP       Registered `
+- NetBIOS Enumerator
 
-`    PC-ALICE     <03>  UNIQUE      Registered `
+NetBIOS Enumerator es una herramienta de enumeración que muestra cómo utilizar el soporte de red remota y cómo manejar otros protocolos web, como SMB. Los atacantes utilizan NetBIOS Enumerator para enumerar detalles como nombres NetBIOS, nombres de usuario, nombres de dominio y direcciones de control de acceso a medios (MAC) para un rango determinado de direcciones IP.
 
-`    ADMIN        <03>  UNIQUE      Registered `
+- NMAP
 
-`    ------------------------------------------------ `
+Tiene scripts específicos para escanear y enumerar NetBIOS en una red.
 
-**` NetBIOS Names Resolution and Registration Statistics `**
+` nmap -p 137,138,139 --script nbstat <dirección IP objetivo> `
 
-`    Successful Name Resolution:     15 `
+>Salida esperada: Información sobre los servicios NetBIOS en los puertos 137, 138 y 139, que puede incluir nombres NetBIOS y otros detalles de configuración.
 
-`    Successful Name Releases  :      5 `
+- OTRAS
 
-`    Failed Name Resolutions   :      2 `
-
-`    ---------------------------------------------------- `
-
-**` NetBIOS Remote Cache Name Table `**
-
-`    Name               Type      IP Address `
-
-`    PC-JOHN      <20>  UNIQUE    192.168.1.11 `
-
-`    ADMIN        <20>  UNIQUE    192.168.1.12 `
-
-`    ------------------------------------------------------- `
-
-**` NetBIOS Session Statistics `**
-
-`    <Remote Machine>   <In/Out>   <TotalBytes>   <Status> `
-
-`    192.168.1.11       Outbound   15234          Active `
-
-`    192.168.1.12       Inbound    10294          Idle `
-
-Explicación del Resultado:
-- NetBIOS Remote Machine Name Table:
-> Muestra los nombres NetBIOS registrados en el equipo 192.168.1.10.
-> WORKGROUP es el grupo de trabajo al que pertenece.
-> Varios nombres (como PC-ALICE, ADMIN) están registrados con diferentes tipos, representando diferentes servicios o usuarios.
-
-- NetBIOS Names Resolution and Registration Statistics:
-> Resumen de estadísticas de resolución de nombres.
-> Incluye nombres resueltos con éxito, liberaciones de nombres, y fallos en las resoluciones.
-
-- NetBIOS Remote Cache Name Table:
-> Esta tabla de caché muestra los nombres NetBIOS de otros sistemas a los que el equipo ha accedido recientemente junto con sus direcciones IP.
-> Nos da pistas sobre otros dispositivos en la red, como PC-JOHN, ADMIN.
-
-- NetBIOS Session Statistics:
-> Aquí se muestran las conexiones NetBIOS activas y sus estados.
-> Por ejemplo, hay conexiones de entrada y salida entre 192.168.1.10 y otros dispositivos (192.168.1.11, 192.168.1.12), indicando sesiones activas y ociosas.
+> Global Network Inventory, Advanced IP Scanner, Hyena, Nsauditor, etc.
