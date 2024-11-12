@@ -9,7 +9,7 @@ Módulo basado en *identificar y recopilar información detallada de sistemas y 
 
 
 ## Temario
-   (1) Describir los conceptos de enumeración
+   (1) Conceptos básicos
    
    (2) Explicar las diferentes técnicas para la enumeración NetBIOS
 
