@@ -27,8 +27,6 @@ Módulo basado en *identificar y recopilar información detallada de sistemas y 
    
    >Aplicar contramedidas de enumeración
 
- 
-▪ Aplicar contramedidas de enumeración
 ## 
 verview of Cloud Computing
 - Cloud computing refers to on-demand delivery of IT capabilities, in which IT infrastructure and applications are provided to subscribers as metered services over a network. Cloud services are classified into three categories, namely infrastructure-as-a-service (IaaS), platform-as-a-service (PaaS), and software-as-a-service (SaaS), which offer different techniques for developing cloud.
