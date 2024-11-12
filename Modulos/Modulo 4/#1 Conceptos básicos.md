@@ -14,18 +14,18 @@ Posteriormente, se realizaran ataques al sistema y ataques a contraseñas para c
 
 ### Información que se recolecta:
 
-[+] Recursos de red
+- Recursos de red
 
-[+] Recursos compartidos de red
+- Recursos compartidos de red
 
-[+] Tablas de enrutamiento
+- Tablas de enrutamiento
 
-[+] Configuración de auditoría y servicio
+- Configuración de auditoría y servicio
 
-[+] Detalles de SNMP y nombre de dominio completo (FQDN)
+- Detalles de SNMP y nombre de dominio completo (FQDN)
 
-[+] Nombres de máquinas
+- Nombres de máquinas
 
-[+] Usuarios y grupos
+- Usuarios y grupos
 
-[+] Aplicaciones y banners.
+- Aplicaciones y banners.
