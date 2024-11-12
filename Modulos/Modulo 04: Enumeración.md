@@ -6,22 +6,35 @@ Módulo basado en *identificar y recopilar información detallada de sistemas y 
   > Este módulo cubre técnicas de enumeración en sistemas operativos, servicios de red, y aplicaciones web, así como herramientas para realizar esta fase, ayudando a los hackers éticos a identificar vulnerabilidades específicas para reforzar la seguridad.
 
 ## Objetivos de aprendizaje
-  **[1] Comprender la enumeración:** Aprender qué es la enumeración en el contexto de ciberseguridad y cómo se utiliza para obtener información detallada sobre sistemas y redes.
-  **[2] Identificar métodos de enumeración:** Explorar diferentes técnicas para enumerar servicios y recursos en sistemas, incluyendo SMB, SNMP, LDAP, NFS, y otros protocolos de red.
-  **[3] Enumerar usuarios y recursos compartidos:** Adquirir habilidades para identificar nombres de usuario, grupos, recursos compartidos y rutas de acceso en redes.
-  **[4] Reconocer vulnerabilidades:** Aprender a detectar posibles vulnerabilidades a partir de la información recolectada en la enumeración y comprender cómo los atacantes podrían explotarlas.
-  **[5] Usar herramientas de enumeración:** Familiarizarse con herramientas como Nmap, NetBIOS Enumerator, enum4linux, y otras, para realizar la enumeración en diferentes entornos de red.
-  **[6] Implementar contramedidas:** Identificar y aplicar contramedidas para reducir la exposición y mitigar los riesgos de enumeración en sistemas y redes de la organización.
+  **[1] Comprender la enumeración:** Cómo se utiliza para obtener información detallada sobre sistemas y redes.
+  
+  **[2] Identificar métodos de enumeración:** Técnicas para enumerar servicios y recursos en sistemas, incluyendo SMB, SNMP, LDAP, NFS, y otros protocolos de red.
+  
+  **[3] Enumerar usuarios y recursos compartidos:** Habilidades para identificar nombres de usuario, grupos, recursos compartidos y rutas de acceso en redes.
+  
+  **[4] Reconocer vulnerabilidades:** Detectar posibles vulnerabilidades a partir de la información recolectada en la enumeración y comprender cómo los atacantes podrían explotarlas.
+  
+  **[5] Usar herramientas de enumeración:** Nmap, NetBIOS Enumerator, enum4linux, y otras.
+  
+  **[6] Implementar contramedidas:** Contramedidas para reducir la exposición y mitigar los riesgos de enumeración en sistemas y redes de la organización.
 
 ## Objetivos del módulo
    [+] Describir los conceptos de enumeración
+   
    [+] Explicar las diferentes técnicas para la enumeración NetBIOS
+   
    [+] Explicar las diferentes técnicas para la enumeración SNMP
+   
    [+] Explicar las diferentes técnicas para la enumeración LDAP y Active Directory (AD)
+   
    [+] Explicar las diferentes técnicas para la enumeración NTP
+   
    [+] Explicar las diferentes técnicas para la enumeración NFS
+   
    [+] Explicar las diferentes técnicas para la enumeración SMTP y DNS
+   
    [+] Explicar otras técnicas de enumeración como IPsec, VoIP, RPC, Linux/Unix, Telnet, FTP, TFTP, SMB, IPv6 y BGP
+   
    [+] Aplicar contramedidas de enumeración
 
 
