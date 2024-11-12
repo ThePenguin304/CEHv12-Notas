@@ -12,6 +12,8 @@ Posteriormente, se realizaran ataques al sistema y ataques a contraseñas para c
 
 > Las ténicas se realizan en la intranet del target.
 
+> Durante la enumeración, los atacantes pueden tropezar con un recurso compartido de comunicación entre procesos (IPC) remoto, como IPC$ en Windows, que pueden investigar más a fondo para conectarse a un recurso compartido administrativo mediante la fuerza bruta de las credenciales de administrador y obtener información completa sobre la lista del sistema de archivos que representa el recurso compartido.
+
 ### Información que se recolecta:
 
 - Recursos de red
