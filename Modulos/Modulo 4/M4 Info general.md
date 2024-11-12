@@ -11,7 +11,7 @@ Módulo basado en *identificar y recopilar información detallada de sistemas y 
 ## Temario
    (1) Describir los conceptos de enumeración
    
-   (2 - 6) Explicar las diferentes técnicas para la enumeración NetBIOS, SNMP, LDAP y Active Directory (AD), NTP, NFS, SMTP y DNS
+   (2) Explicar las diferentes técnicas para la enumeración NetBIOS
 
    (3) Explicar las diferentes técnicas para la enumeración SNMP
 
