@@ -25,16 +25,19 @@ Objectivo de la enumeración:
 Es una utilidad en Windows que permite a los administradores de red ver la tabla de nombres NetBIOS de un equipo remoto.
 
 Comandos útiles:
-- -a < NombreRemoto >. Muestra la tabla de nombres NetBIOS de un equipo remoto, donde NombreRemoto es el nombre de equipo NetBIOS del equipo remoto
-- -A < Dirección IP >. Muestra la tabla de nombres NetBIOS de un equipo remoto, especificada por la dirección IP (en notación decimal con puntos) del equipo remoto
-- -c. Enumera el contenido de la caché de nombres NetBIOS, la tabla de nombres NetBIOS y sus direcciones IP resueltas
-- -n. Muestra los nombres registrados localmente por aplicaciones NetBIOS como el servidor y el redirector
-- -r. Muestra un recuento de todos los nombres resueltos por un servidor de difusión o WINS
-- -R. Purga la caché de nombres y vuelve a cargar todas las entradas etiquetadas con #PRE del archivo Lmhosts
-- -RR. Libera y vuelve a registrar todos los nombres con el servidor de nombres
-- -s. Enumera la tabla de sesiones NetBIOS convirtiendo las direcciones IP de destino en nombres NetBIOS de computadora
-- -S. Enumera las sesiones NetBIOS actuales y su estado con las direcciones IP
-- Interval. Vuelve a mostrar las estadísticas seleccionadas, deteniéndose en cada visualización durante la cantidad de segundos especificada en el intervalo
+Idle
+|Comandos|Descripción|
+|-------|-----|
+|`-a <NombreRemoto>`|Muestra la tabla de nombres NetBIOS de un equipo remoto, donde NombreRemoto es el nombre de equipo NetBIOS del equipo remoto|
+|`-A <NombreRemoto>`|Muestra la tabla de nombres NetBIOS de un equipo remoto, especificada por la dirección IP (en notación decimal con puntos) del equipo remoto|
+|-c|Enumera el contenido de la caché de nombres NetBIOS, la tabla de nombres NetBIOS y sus direcciones IP resueltas|
+|-n|Muestra los nombres registrados localmente por aplicaciones NetBIOS como el servidor y el redirector|
+|-r|Muestra un recuento de todos los nombres resueltos por un servidor de difusión o WINS|
+|-R|Purga la caché de nombres y vuelve a cargar todas las entradas etiquetadas con #PRE del archivo Lmhosts|
+|-RR|Libera y vuelve a registrar todos los nombres con el servidor de nombres|
+|-s|Enumera la tabla de sesiones NetBIOS convirtiendo las direcciones IP de destino en nombres NetBIOS de computadora|
+|-S|Enumera las sesiones NetBIOS actuales y su estado con las direcciones IP|
+|-Interval|Vuelve a mostrar las estadísticas seleccionadas, deteniéndose en cada visualización durante la cantidad de segundos especificada en el intervalo
 
 Ejemplo:
 ` nbtstat -A 192.168.1.10 -r -c -s `
@@ -81,7 +84,7 @@ PsExec permite ejecutar comandos en sistemas remotos y, cuando se combina con ci
 
 Puedes ejecutar el comando net user en un sistema remoto para listar las cuentas locales usando PsExec. El comando básico sería:
 
- psexec \\<IP_del_objetivo> -u <usuario> -p <contraseña> cmd /c "net user" `
+` psexec \\<IP_del_objetivo> -u <usuario> -p <contraseña> cmd /c "net user" `
 
 >  <IP_del_objetivo>: Dirección IP del sistema remoto.
 
