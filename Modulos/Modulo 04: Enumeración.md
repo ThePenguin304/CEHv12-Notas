@@ -1,10 +1,22 @@
 # Enumeración
 Módulo basado en *identificar y recopilar información detallada de sistemas y redes para planificar ataques*.
 
-  > [+] Durante la enumeración, el profesional accede a datos críticos como nombres de usuario, detalles de recursos compartidos, servicios activos, y posibles puntos de entrada.
+  > [+] Durante la enumeración, el profesional accede a datos críticos como nombres de usuario, detalles de recursos compartidos, servicios activos y posibles puntos de entrada.
   
   > [+] Este módulo cubre técnicas de enumeración en sistemas operativos, servicios de red, y aplicaciones web, así como herramientas para realizar esta fase, ayudando a los hackers éticos a identificar vulnerabilidades específicas para reforzar la seguridad.
 
+## Objetivos de aprendizaje
+  **[1] Comprender la enumeración:** Aprender qué es la enumeración en el contexto de ciberseguridad y cómo se utiliza para obtener información detallada sobre sistemas y redes.
+
+  **[2] Identificar métodos de enumeración:** Explorar diferentes técnicas para enumerar servicios y recursos en sistemas, incluyendo SMB, SNMP, LDAP, NFS, y otros protocolos de red.
+
+  **[3] Enumerar usuarios y recursos compartidos:** Adquirir habilidades para identificar nombres de usuario, grupos, recursos compartidos y rutas de acceso en redes.
+
+  **[4] Reconocer vulnerabilidades:** Aprender a detectar posibles vulnerabilidades a partir de la información recolectada en la enumeración y comprender cómo los atacantes podrían explotarlas.
+
+  **[5] Usar herramientas de enumeración:** Familiarizarse con herramientas como Nmap, NetBIOS Enumerator, enum4linux, y otras, para realizar la enumeración en diferentes entornos de red.
+
+  **[6] Implementar contramedidas:** Identificar y aplicar contramedidas para reducir la exposición y mitigar los riesgos de enumeración en sistemas y redes de la organización.
 
 verview of Cloud Computing
 - Cloud computing refers to on-demand delivery of IT capabilities, in which IT infrastructure and applications are provided to subscribers as metered services over a network. Cloud services are classified into three categories, namely infrastructure-as-a-service (IaaS), platform-as-a-service (PaaS), and software-as-a-service (SaaS), which offer different techniques for developing cloud.
