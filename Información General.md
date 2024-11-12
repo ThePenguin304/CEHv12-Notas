@@ -4,13 +4,13 @@ El CEH v12 (Certified Ethical Hacker) es una certificación de ciberseguridad of
 
 ## Características de CEH v12
 
-[+]**Últimas técnicas y herramientas:** La versión 12 incluye herramientas actualizadas y técnicas avanzadas para identificar vulnerabilidades de seguridad en sistemas, redes y aplicaciones.
+  [+] **Últimas técnicas y herramientas:** La versión 12 incluye herramientas actualizadas y técnicas avanzadas para identificar vulnerabilidades de seguridad en sistemas, redes y aplicaciones.
 
-[+]**Módulos:** La certificación se compone de módulos que abarcan desde los fundamentos de hacking ético, hasta temas específicos como el escaneo de redes, enumeración, ataques de ingeniería social, evasión de IDS (sistemas de detección de intrusos), y técnicas avanzadas de hacking web.
+  [+] **Módulos:** La certificación se compone de módulos que abarcan desde los fundamentos de hacking ético, hasta temas específicos como el escaneo de redes, enumeración, ataques de ingeniería social, evasión de IDS (sistemas de detección de intrusos), y técnicas avanzadas de hacking web.
 
-[+]**Práctica y laboratorio:** Además del contenido teórico, CEH v12 incorpora un laboratorio virtual con simulaciones de ataques y defensas en entornos controlados, que ayuda a los estudiantes a practicar en escenarios de la vida real.
+  [+] **Práctica y laboratorio:** Además del contenido teórico, CEH v12 incorpora un laboratorio virtual con simulaciones de ataques y defensas en entornos controlados, que ayuda a los estudiantes a practicar en escenarios de la vida real.
 
-[+]**Examen:** Para obtener la certificación, es necesario aprobar el examen de CEH (312-50), que consta de preguntas tipo test sobre técnicas y métodos de hacking ético.
+  [+] **Examen:** Para obtener la certificación, es necesario aprobar el examen de CEH (312-50), que consta de preguntas tipo test sobre técnicas y métodos de hacking ético.
 
 ## Objetivos de Aprendizaje
 
