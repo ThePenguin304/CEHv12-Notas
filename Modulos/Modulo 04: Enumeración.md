@@ -1,7 +1,9 @@
 # Enumeración
 > Módulo basado en *identificar y recopilar información detallada de sistemas y redes para planificar ataques*.
-> Durante la enumeración, el profesional accede a datos críticos como nombres de usuario, detalles de recursos compartidos, servicios activos, y posibles puntos de entrada.
-> Este módulo cubre técnicas de enumeración en sistemas operativos, servicios de red, y aplicaciones web, así como herramientas para realizar esta fase, ayudando a los hackers éticos a identificar vulnerabilidades específicas para reforzar la seguridad.
+
+  [+] Durante la enumeración, el profesional accede a datos críticos como nombres de usuario, detalles de recursos compartidos, servicios activos, y posibles puntos de entrada.
+  
+  [+] Este módulo cubre técnicas de enumeración en sistemas operativos, servicios de red, y aplicaciones web, así como herramientas para realizar esta fase, ayudando a los hackers éticos a identificar vulnerabilidades específicas para reforzar la seguridad.
 
 
 verview of Cloud Computing
