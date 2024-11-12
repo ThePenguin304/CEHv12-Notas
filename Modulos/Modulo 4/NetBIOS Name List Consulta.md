@@ -1,22 +1,15 @@
 # NetBIOS Name List
 
-**` Name | NetBIOS Code | Type | Information Obtained `**
-
-` <host name> | <00> | UNIQUE | Hostname `
-
-`<domain> | <00> | GROUP | Domain name`
-
-`<host name> | <03> | UNIQUE | Messenger service running for the computer`
-
-`<username> | <03> | UNIQUE | Messenger service running for the logged-in user`
-
-`<host name> | <20> | UNIQUE | Server service running`
-
-`<domain> | <1D> | GROUP | Master browser name for the subnet`
-
-`<domain> | <1B> | UNIQUE | Domain master browser name, which identifies the primary domain controller (PDC) for the domain`
-
-`<domain> | <1E> | GROUP | Browser service election`
+|Name|NetBIOS Code|Type|InformationObtained|
+|---------|-----|-------|-------|
+|`<host name>`|`<00>`| UNIQUE |Hostname
+|`<domain>`|`<00>`| GROUP | Domain name
+|`<host name>`|`<03>`| UNIQUE | Messenger service running for the computer
+|`<username>`|`<03>`| UNIQUE | Messenger service running for the logged-in user
+|`<host name>`|`<20>`| UNIQUE | Server service running
+|`<domain>`|`<1D>`| GROUP | Master browser name for the subnet
+|`<domain>`|`<1B>`| UNIQUE | Domain master browser name, which identifies the primary domain controller (PDC) for the domain
+|`<domain>`|`<1E>`| GROUP | Browser service election
 
 Ejemplo:
 nbtstat -A 192.168.1.10 -r -c -s
@@ -32,44 +25,30 @@ Resultado de la consulta  ` nbtstat -A 192.168.1.10 -r -c -s `
 
 >
 **` NetBIOS Remote Machine Name Table `**
->
-`    Name               Type         Status `
-
-`    WORKGROUP    <00>  GROUP       Registered `
-
-`    PC-ALICE     <03>  UNIQUE      Registered `
-
-`    ADMIN        <03>  UNIQUE      Registered `
-
-`    ------------------------------------------------ `
+|Name|NetBIOS Code|Type|Status|
+|---------|-----|-------|-------|
+|WORKGROUP|`<00>`| GROUP |Registered|
+|PC-ALICE|`<03>`| UNIQUE |Registered|
+|ADMIN|`<03>`| UNIQUE |Registered|
 
 **` NetBIOS Names Resolution and Registration Statistics `**
-
-`    Successful Name Resolution:     15 `
-
-`    Successful Name Releases  :      5 `
-
-`    Failed Name Resolutions   :      2 `
-
-`    ---------------------------------------------------- `
+|Name|NetBIOS Code|
+|---------|-----|
+|`Successful Name Resolution`|`15`|
+|`Successful Name Releases`|`5`|
+|`Failed Name Resolutions`|`2`|
 
 **` NetBIOS Remote Cache Name Table `**
-
-`    Name               Type      IP Address `
-
-`    PC-JOHN      <20>  UNIQUE    192.168.1.11 `
-
-`    ADMIN        <20>  UNIQUE    192.168.1.12 `
-
-`    ------------------------------------------------------- `
+|Name|NetBIOS Code|Type|IP Address|
+|---------|-----|-------|-------|
+|PC-JOHN|`<20>`| UNIQUE |192.168.1.11|
+|ADMIN|`<20>`| UNIQUE |192.168.1.12|
 
 **` NetBIOS Session Statistics `**
-
-`    <Remote Machine>   <In/Out>   <TotalBytes>   <Status> `
-
-`    192.168.1.11       Outbound   15234          Active `
-
-`    192.168.1.12       Inbound    10294          Idle `
+|Remote Machine|In/Out|TotalBytes|Status|
+|---------|-----|-------|-------|
+|192.168.1.11|`Outbound`| 15234 |Active|
+|192.168.1.12|`Inbound`| 10294 |Idle|
 
 Explicación del Resultado:
 - NetBIOS Remote Machine Name Table:
