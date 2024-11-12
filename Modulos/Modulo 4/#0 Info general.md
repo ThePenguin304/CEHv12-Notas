@@ -28,7 +28,3 @@ Módulo basado en *identificar y recopilar información detallada de sistemas y 
 ## Resumen final
 
 
-
-Enumerate S3 Buckets using lazys3
-- lazys3 is a Ruby script tool that is used to brute-force AWS S3 buckets using different permutations. This tool obtains the publicly accessible S3 buckets and also allows you to search the S3 buckets of a specific company by entering the company name.
-- ` ruby lazys3.rb [Company] `
