@@ -24,6 +24,24 @@ Objectivo de la enumeración:
 
 Es una utilidad en Windows que permite a los administradores de red ver la tabla de nombres NetBIOS de un equipo remoto.
 
+**` Name | NetBIOS Code | Type | Information Obtained `**
+
+` <host name> | <00> | UNIQUE | Hostname `
+
+`<domain> | <00> | GROUP | Domain name`
+
+`<host name> | <03> | UNIQUE | Messenger service running for the computer`
+
+`<username> | <03> | UNIQUE | Messenger service running for the logged-in user`
+
+`<host name> | <20> | UNIQUE | Server service running`
+
+`<domain> | <1D> | GROUP | Master browser name for the subnet`
+
+`<domain> | <1B> | UNIQUE | Domain master browser name, which identifies the primary domain controller (PDC) for the domain`
+
+`<domain> | <1E> | GROUP | Browser service election`
+
 Comandos útiles:
 - -a < NombreRemoto >
 > Muestra la tabla de nombres NetBIOS de un equipo remoto, donde NombreRemoto es el nombre de equipo NetBIOS del equipo remoto
@@ -59,7 +77,7 @@ nbtstat -A 192.168.1.10 -r -c -s
 Resultado de la consulta  ` nbtstat -A 192.168.1.10 -r -c -s `
 
 >
-` NetBIOS Remote Machine Name Table `
+**` NetBIOS Remote Machine Name Table `**
 >
 `    Name               Type         Status `
 
@@ -67,27 +85,21 @@ Resultado de la consulta  ` nbtstat -A 192.168.1.10 -r -c -s `
 
 `    PC-ALICE     <03>  UNIQUE      Registered `
 
-`    PC-ALICE     <20>  UNIQUE      Registered `
-
 `    ADMIN        <03>  UNIQUE      Registered `
-
-`    Fileshare    <1D>  UNIQUE      Registered `
-
-`    IS~ALICE     <1B>  UNIQUE      Registered `
-
-`    MACBOOK      <03>  UNIQUE      Registered `
 
 `    ------------------------------------------------ `
 
-` NetBIOS Names Resolution and Registration Statistics `
+**` NetBIOS Names Resolution and Registration Statistics `**
 
 `    Successful Name Resolution:     15 `
+
 `    Successful Name Releases  :      5 `
+
 `    Failed Name Resolutions   :      2 `
 
 `    ---------------------------------------------------- `
 
-` NetBIOS Remote Cache Name Table `
+**` NetBIOS Remote Cache Name Table `**
 
 `    Name               Type      IP Address `
 
@@ -97,15 +109,28 @@ Resultado de la consulta  ` nbtstat -A 192.168.1.10 -r -c -s `
 
 `    ------------------------------------------------------- `
 
-` NetBIOS Session Statistics `
-
-`    Connection Table: `
+**` NetBIOS Session Statistics `**
 
 `    <Remote Machine>   <In/Out>   <TotalBytes>   <Status> `
-
-`    ----------------------------------------------- `
 
 `    192.168.1.11       Outbound   15234          Active `
 
 `    192.168.1.12       Inbound    10294          Idle `
 
+Explicación del Resultado:
+- NetBIOS Remote Machine Name Table:
+> Muestra los nombres NetBIOS registrados en el equipo 192.168.1.10.
+> WORKGROUP es el grupo de trabajo al que pertenece.
+> Varios nombres (como PC-ALICE, ADMIN) están registrados con diferentes tipos, representando diferentes servicios o usuarios.
+
+- NetBIOS Names Resolution and Registration Statistics:
+> Resumen de estadísticas de resolución de nombres.
+> Incluye nombres resueltos con éxito, liberaciones de nombres, y fallos en las resoluciones.
+
+- NetBIOS Remote Cache Name Table:
+> Esta tabla de caché muestra los nombres NetBIOS de otros sistemas a los que el equipo ha accedido recientemente junto con sus direcciones IP.
+> Nos da pistas sobre otros dispositivos en la red, como PC-JOHN, ADMIN.
+
+- NetBIOS Session Statistics:
+> Aquí se muestran las conexiones NetBIOS activas y sus estados.
+> Por ejemplo, hay conexiones de entrada y salida entre 192.168.1.10 y otros dispositivos (192.168.1.11, 192.168.1.12), indicando sesiones activas y ociosas.
