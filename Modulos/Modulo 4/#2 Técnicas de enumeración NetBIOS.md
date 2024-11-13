@@ -169,7 +169,25 @@ Net View es un comando de Windows que permite ver los recursos compartidos en un
 net view \\<nombre del equipo o IP>
 ```
 
->Salida esperada: Listado de recursos compartidos, como carpetas o impresoras accesibles en la red. Esta información es útil para identificar qué recursos podrían ser vulnerables a un acceso no autorizado.
+```bash
+net view \\192.168.1.10
+
+Shared resources at \\192.168.1.10
+
+Share name     Type      Used as  Comment
+-------------------------------------------
+ADMIN$         Disk               Remote Admin
+C$             Disk               Default share
+IPC$           IPC                Remote IPC
+Documents      Disk               Shared folder for company files
+Software       Disk               Software repository
+```
+
+Salida esperada: Listado de recursos compartidos, como carpetas o impresoras accesibles en la red. Esta información es útil para identificar qué recursos podrían ser vulnerables a un acceso no autorizado.
+
+>IPC$ es un recurso compartido especial en sistemas Windows conocido como Inter-Process Communication (IPC) share. Este recurso no es una carpeta compartida tradicional sino un mecanismo que permite la comunicación entre procesos y compartición de datos entre diferentes partes de un sistema, generalmente usado para tareas administrativas remotas.
+
+
 
 ```bash
 net view \\<computername> /ALL
