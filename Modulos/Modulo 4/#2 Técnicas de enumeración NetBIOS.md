@@ -2,9 +2,11 @@
 
 La enumeración de NetBIOS es una técnica utilizada en hacking ético para obtener información específica sobre equipos que están en una red local, especialmente en entornos que utilizan sistemas Windows. NetBIOS permite a los dispositivos en la red identificarse entre sí, lo cual facilita el descubrimiento de recursos compartidos, usuarios y servicios disponibles.
 
+NetBIOS proporciona servicio de nombres, comunicación sin conexión y algunas otras cosas de la capa de sesión.
+
 ## 1. Enumeración NetBIOS
 
-Un nombre NetBIOS es una cadena única de 16 caracteres ASCII que se utiliza para identificar los dispositivos de red a través de TCP/IP; se utilizan 15 caracteres para el nombre del dispositivo y el 16o carácter está reservado para el tipo de registro de servicio o nombre.
+Un nombre NetBIOS es una cadena única de 16 caracteres ASCII que se utiliza para identificar los dispositivos de red a través de segmento TCP/IP; se utilizan 15 caracteres para el nombre del dispositivo y el 16o carácter está reservado para el tipo de registro de servicio o nombre.
 
 > La resolución de nombres NetBIOS no es compatible con Microsoft para el Protocolo de Internet versión 6 (IPv6)
 
@@ -40,7 +42,9 @@ Idle
 |-Interval|Vuelve a mostrar las estadísticas seleccionadas, deteniéndose en cada visualización durante la cantidad de segundos especificada en el intervalo
 
 Ejemplo:
-` nbtstat -A 192.168.1.10 -r -c -s `
+```bash 
+nbtstat -A 192.168.1.10 -r -c -s `
+```
 
 >-A 192.168.1.10: Consulta la tabla de nombres de NetBIOS en el equipo con dirección IP 192.168.1.10.
 
@@ -62,7 +66,9 @@ NetBIOS Enumerator es una herramienta de enumeración que muestra cómo utilizar
 
 Tiene scripts específicos para escanear y enumerar NetBIOS en una red.
 
-` nmap -p 137,138,139 --script nbstat <dirección IP objetivo> `
+```bash
+nmap -p 137,138,139 --script nbstat <dirección IP objetivo>
+```
 
 >Salida esperada: Información sobre los servicios NetBIOS en los puertos 137, 138 y 139, que puede incluir nombres NetBIOS y otros detalles de configuración.
 
@@ -84,7 +90,9 @@ PsExec permite ejecutar comandos en sistemas remotos y, cuando se combina con ci
 
 Puedes ejecutar el comando net user en un sistema remoto para listar las cuentas locales usando PsExec. El comando básico sería:
 
-` psexec \\<IP_del_objetivo> -u <usuario> -p <contraseña> cmd /c "net user" `
+```bash
+psexec \\<IP_del_objetivo> -u <usuario> -p <contraseña> cmd /c "net user"
+```
 
 >  <IP_del_objetivo>: Dirección IP del sistema remoto.
 
@@ -98,13 +106,17 @@ Firewall: PsExec necesita acceso remoto, así que el firewall debe permitirlo. E
 
 Permite ver los archivos abiertos de manera remota en un sistema Windows. Para identificar archivos que están en uso y sus respectivos usuarios, lo cual puede ser útil para identificar accesos sospechosos o uso compartido de archivos en redes.
 
-` psfile \\<IP_del_objetivo> `
+```bash
+psfile \\<IP_del_objetivo>
+```
 
 ### PsKill
 
 Descripción: Termina procesos en sistemas locales o remotos, útil para finalizar procesos específicos que pueden estar consumiendo recursos o comportándose de forma anómala. Se puede emplear para detener procesos maliciosos o para simular actividad en pentests.
 
-` pskill \\<IP_del_objetivo> <nombre_proceso_o_PID> `
+```bash
+pskill \\<IP_del_objetivo> <nombre_proceso_o_PID>
+```
 
 ### PsInfo
 
@@ -122,8 +134,9 @@ Obtiene el Security Identifier (SID) de una máquina o de un usuario específico
 
 Muestra los usuarios actualmente conectados a un sistema, incluyendo sesiones locales y remotas. Enumerar sesiones activas es útil para evaluar actividad de usuarios y posibles puntos de entrada.
 
-` psloggedon \\<IP_del_objetivo> `
-
+```bash
+psloggedon \\<IP_del_objetivo>
+```
 
 ### PsLogList
 
@@ -136,27 +149,42 @@ Uso: Para actualizar contraseñas sin tener que iniciar sesión en cada máquina
 
 Permite cambiar contraseñas de usuarios en el sistema local o remoto. Para actualizar contraseñas sin tener que iniciar sesión en cada máquina, especialmente útil en auditorías de acceso o administración de cuentas.
 
-` pspasswd \\<IP_del_objetivo> <usuario> <nueva_contraseña> `
+```bash
+pspasswd \\<IP_del_objetivo> <usuario> <nueva_contraseña>
+```
 
 ### PsShutdown
 
 Cierra o reinicia sistemas remotos. Puede emplearse para simular fallas de sistemas en pruebas de recuperación o en gestión de servidores.
 
-` psshutdown \\<IP_del_objetivo> -r -t 60 `
+```bash
+psshutdown \\<IP_del_objetivo> -r -t 60
+```
 
 ## 4. Enumeración de recursos compartidos mediante Net View
 
 Net View es un comando de Windows que permite ver los recursos compartidos en una red.
 
-` net view \\<nombre del equipo o IP> `
+```bash
+net view \\<nombre del equipo o IP>
+```
 
 >Salida esperada: Listado de recursos compartidos, como carpetas o impresoras accesibles en la red. Esta información es útil para identificar qué recursos podrían ser vulnerables a un acceso no autorizado.
 
-` net view \\<computername> /ALL `
+```bash
+net view \\<computername> /ALL
+```
+
 >El comando anterior muestra todos los recursos compartidos en la computadora remota especificada, junto con los recursos compartidos ocultos.
 
-` net view /domain `
+```bash
+net view /domain
+```
+
 >El comando anterior muestra todos los recursos compartidos en el dominio.
 
-`net view /domain:<domain name>`
+```bash
+net view /domain:<domain name>
+```
+
 >El comando anterior muestra todos los recursos compartidos en el dominio especificado.
