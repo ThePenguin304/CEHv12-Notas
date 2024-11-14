@@ -63,6 +63,8 @@ ntpq -p 192.168.1.100
 
 `PRTG Network Monitor` incluye SNTP Sensor monitor, un servidor SNTP que compara la diferencia de tiempo de respuesta entre el servidor y el sistema local.
 
+---
+
 ## 5.2 NFS
 
 Protocolo que permite a los sistemas conectados en una red compartir archivos y directorios de manera remota, como si estuvieran en el propio sistema local. Esto facilita la gestión y el acceso compartido a archivos y permite a los usuarios trabajar con archivos remotos sin necesidad de transferirlos manualmente.
