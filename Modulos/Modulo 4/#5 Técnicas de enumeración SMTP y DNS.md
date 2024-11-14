@@ -124,8 +124,90 @@ dnsrecon -t axfr -d <target domain>
 
 El atacante consulta al servidor DNS para obtener un registro DNS almacenado en caché específico.
 
+En DNS Cache Snooping, el atacante envía una consulta al servidor DNS preguntando por un dominio específico, pero sin solicitar la resolución completa. En lugar de resolver el dominio, simplemente se pregunta al servidor si tiene ese dominio en caché:
+* Si el servidor responde rápidamente con la dirección IP, significa que el dominio está en caché. Esto indica que alguien en la red ha solicitado recientemente ese dominio.
+* Si el servidor toma más tiempo en responder o no tiene el dominio en caché, entonces es probable que ese dominio no haya sido solicitado recientemente.
+
+Al observar qué dominios están en caché, un atacante podría deducir a qué sitios están accediendo los usuarios de una red. Esto podría revelar patrones de tráfico, servicios en uso o incluso aplicaciones específicas.
+
+`root.hints file` fichero que contiene toda la informació sobre todos los servidores DNS roots.
+Ejemplos de Información Obtenible
+
+A través de DNS Cache Snooping, un atacante podría obtener:
+
+- Patrones de tráfico: Detectar qué sitios o servicios están siendo utilizados con frecuencia.
+- Presencia de servicios específicos: Identificar si se están utilizando servicios externos específicos o sitios populares, lo cual podría orientar ataques futuros.
+- Información sobre la red: Esto puede revelar nombres de dominio internos y subdominios en uso, especialmente si los servidores DNS no están bien configurados.
+
+Herramientas Utilizadas en DNS Cache Snooping
+- dig: Una de las herramientas más utilizadas, con opciones como +norecurse.
+- dnsrecon: Una herramienta de recolección de información DNS en Python que incluye técnicas de cache snooping.
+- nmap: Aunque nmap es más amplio, en ciertos scripts permite obtener información de DNS que puede ser útil en análisis.
+
 ### Método no recursivo
 
+Consulta no recursiva (consulta iterativa): Este es un método más directo y menos detectable. Aquí el atacante pregunta al servidor DNS sin solicitar la resolución completa, simplemente para saber si el dominio está en la caché. Para esto, se especifica que la consulta sea no recursiva utilizando la opción `+norecurse` con herramientas como `dig`:
 
+```bash
+dig +norecurse example.com @DNS_SERVER_IP
+```
+
+```bash
+dig @<IP of DNS server> <Target domain> A +norecurse
+```
+
+ Si devuelve `status NOERROR` ha sido aceptada la petición pero no ha respondido nada.
 
 ### Método recursivo
+
+Si el servidor permite consultas recursivas, el atacante puede preguntar por un dominio y observar si la respuesta es rápida o no. Las respuestas rápidas suelen indicar que el dominio ya está en caché, mientras que una respuesta más lenta indica que el servidor necesita consultar otros servidores para resolverlo.
+
+Se especifica que la consulta sea no recursiva utilizando la opción `recurse`.
+
+```bash
+dig @<IP of DNS server> <Target domain> A +recurse
+```
+
+Si el TTL es muy elevado quiere decir que no está en la caché, ya que ha de ir a resolverlo.
+
+## DNSSEC Zone Walking
+
+Técnica utilizada para enumerar o descubrir todos los registros de un dominio protegido con DNSSEC (DNS Security Extensions). Esto sucede debido a una característica llamada NSEC (Next Secure), que DNSSEC usa para indicar que un dominio o subdominio específico no existe. Sin embargo, a través de esta respuesta de inexistencia, un atacante puede reconstruir la zona completa del dominio y obtener información sobre todos los registros que existen en esa zona, incluso aquellos que están protegidos por DNSSEC.
+
+DNSSEC proporciona integridad y autenticidad de las respuestas DNS mediante la firma de registros DNS con claves criptográficas. Sin embargo, para que DNSSEC pueda responder a una consulta por un dominio inexistente de manera segura, usa registros NSEC o NSEC3 para demostrar la inexistencia de ese dominio:
+
+- NSEC: Cuando se consulta un dominio que no existe, el servidor DNS devuelve un registro NSEC que indica cuál es el próximo dominio "seguro" en la zona.
+- NSEC3: Introducido como una mejora de seguridad, utiliza un valor hash de los nombres de dominio para que la información no se lea tan fácilmente.
+Con la implementación de NSEC, cualquier persona puede solicitar registros consecutivos, y al encadenar las respuestas, puede reconstruir la zona entera del dominio. Esto significa que un atacante puede listar nombres de host, direcciones IP y servicios internos o sensibles.
+
+### HERRAMIENTAS
+
+LDNS
+
+LDNS-walk es una herramienta diseñada específicamente para realizar zone walking en servidores DNS protegidos por DNSSEC. Aprovecha la vulnerabilidad inherente a algunos registros DNSSEC, particularmente NSEC y, en menor medida, NSEC3, para intentar enumerar todos los nombres de dominio y subdominios dentro de una zona DNS.
+
+DNSRecon
+
+```bash
+./dnsrecon -d <target domain> -z
+```
+
+NMAP
+
+```bash
+nmap --script=broadcast-dns-service-discovery <Target Domain>
+```
+
+```bash
+nmap -T4 -p 53 --script dns-brute <Target Domain>
+```
+
+```bash
+nmap -Pn -sU -p 53 --script=dns-recursion 192.168.1.150
+```
+
+DNS Security Extensions (DNSSEC) Enumeration Using Nmap
+
+```bash
+nmap -sU -p 53 --script dns-nsec-enum --script-args dns-nsec-enum.domains= eccouncil.org <target>
+```
