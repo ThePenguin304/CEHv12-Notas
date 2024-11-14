@@ -75,13 +75,17 @@ La llamada a procedimiento remoto (RPC) se utiliza para enrutar y procesar la so
 
 Después de recopilar esta información, los atacantes pueden falsificar sus direcciones IP para obtener acceso completo a los archivos compartidos en el servidor. Para acceder al servidor, la única credencial utilizada es la dirección IP del cliente.
 
-`rpcinfo -p <TargetIP Addres>`
+```bash
+rpcinfo -p <TargetIP Addres>
+```
 
 >Escaneo al "target" usando el comando `rpcinfo` al puerto 2049 y los servicios NFS corriendo en este.
 
 Para ver la lista de ficheros y directorios compartidos se usa el siguiente comando.
 
-`showmount -e <Target IP Addres>`
+```bash
+showmount -e <Target IP Addres>
+```
 
 ### Herramientas enumeración NFS
 
@@ -90,7 +94,9 @@ Los atacantes pueden usar otras herramientas para ganar acceso al servidor NFS y
 Es importante enumerar la lista de servicios RPC y la lista de los compartidos de NFS:
 * `RPCScan` Revisa malas configuraciones en los servidores NFS.
 
-`python3 rpc-scan.py <Target IP Address> --rpc`
+```bash
+python3 rpc-scan.py <Target IP Address> --rpc
+```
 
 * `SuperEnum` Contiene un script que enumera cualquier puerto abierto.
 
