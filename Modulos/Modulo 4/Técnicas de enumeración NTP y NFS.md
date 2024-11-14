@@ -1,5 +1,7 @@
 # Técnicas de enumeración NTP y NFS
 
+Redirección a [Información General](https://github.com/ThePenguin304/CEHv12-Notas/blob/main/Modulos/Modulo%204/%230%20Info%20general.md)
+
 `NTP (Network Time Protocol)` Se utiliza para sincronizar la hora de los sistemas en una red. La enumeración de NTP puede proporcionar información útil para los atacantes, como la versión del servicio y posibles configuraciones vulnerables.
 
 `NFS (Network File System)` Es un protocolo de archivos distribuido que permite a los clientes acceder a archivos en sistemas remotos a través de la red. Los atacantes pueden enumerar los sistemas NFS para obtener información sobre qué directorios están exportados y qué permisos tienen.
