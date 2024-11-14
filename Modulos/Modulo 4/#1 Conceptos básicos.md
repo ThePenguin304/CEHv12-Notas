@@ -129,7 +129,4 @@ El **Simple Network Management Protocol (SNMP)** se utiliza para gestionar y sup
 ### NetBIOS Session Service
 - **Puerto**: 139 TCP
 - **Descripción**: Permite la comunicación basada en sesión entre dispositivos, utilizada para compartir archivos e impresoras en redes **Windows**.
-
----
-
-Es recomendable bloquear estos puertos (137-139) en redes externas, ya que pueden ser utilizados para ataques de enumeración, acceso no autorizado y otros vectores de ataque.
+- Es recomendable bloquear estos puertos (137-139) en redes externas, ya que pueden ser utilizados para ataques de enumeración, acceso no autorizado y otros vectores de ataque.
