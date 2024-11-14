@@ -65,5 +65,33 @@ ntpq -p 192.168.1.100
 
 ## NFS
 
+Protocolo que permite a los sistemas conectados en una red compartir archivos y directorios de manera remota, como si estuvieran en el propio sistema local. Esto facilita la gestión y el acceso compartido a archivos y permite a los usuarios trabajar con archivos remotos sin necesidad de transferirlos manualmente.
+
 La enumeración NFS permite a los atacantes identificar los directorios exportados, la lista de clientes conectados al servidor NFS junto con sus direcciones IP y los datos compartidos asociados a las direcciones IP.
 
+La llamada a procedimiento remoto (RPC) se utiliza para enrutar y procesar la solicitud entre clientes y servidores.
+
+/etc/exports contiene la lista de usuarios que se les permite exportar ficheros.
+
+Después de recopilar esta información, los atacantes pueden falsificar sus direcciones IP para obtener acceso completo a los archivos compartidos en el servidor. Para acceder al servidor, la única credencial utilizada es la dirección IP del cliente.
+
+`rpcinfo -p <TargetIP Addres>`
+
+>Escaneo al "target" usando el comando `rpcinfo` al puerto 2049 y los servicios NFS corriendo en este.
+
+Para ver la lista de ficheros y directorios compartidos se usa el siguiente comando.
+
+`showmount -e <Target IP Addres>`
+
+### Herramientas enumeración NFS
+
+Los atacantes pueden usar otras herramientas para ganar acceso al servidor NFS y subir ficheros malignos para realizar ataques a futuro.
+
+Es importante enumerar la lista de servicios RPC y la lista de los compartidos de NFS:
+* `RPCScan` Revisa malas configuraciones en los servidores NFS.
+
+`python3 rpc-scan.py <Target IP Address> --rpc`
+
+* `SuperEnum` Contiene un script que enumera cualquier puerto abierto.
+
+Un atacante utiliza el script `./superenum` y luego ingresa un archivo de texto llamado `“Target.txt”` que tiene una dirección IP de destino o una lista de direcciones IP para enumerar.
