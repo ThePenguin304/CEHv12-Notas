@@ -1,5 +1,7 @@
 # 2. Técnicas de enumeración SNMP
 
+Redirección a [Información General](https://github.com/ThePenguin304/CEHv12-Notas/blob/main/Modulos/Modulo%204/%230%20Info%20general.md)
+
 Protocolo que trabaja con clientes en los equipos y un controlador general. Permite a los administradores controlar los dispositvos de una red de forma remota. 
 
 > Dispone de vulnerabilidades si existe una mala configuración que pueden ser explotadas para obtener información de cuentas y dispositivos que forma la red objetivo.
