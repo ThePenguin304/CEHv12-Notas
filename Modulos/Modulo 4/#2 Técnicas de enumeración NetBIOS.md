@@ -1,5 +1,7 @@
 # 2. Técnicas de enumeración NetBIOS
 
+Redirección a [Información General](https://github.com/ThePenguin304/CEHv12-Notas/blob/main/Modulos/Modulo%204/%230%20Info%20general.md)
+
 La enumeración de NetBIOS es una técnica utilizada en hacking ético para obtener información específica sobre equipos que están en una red local, especialmente en entornos que utilizan sistemas Windows. NetBIOS permite a los dispositivos en la red identificarse entre sí, lo cual facilita el descubrimiento de recursos compartidos, usuarios y servicios disponibles.
 
 NetBIOS proporciona servicio de nombres, comunicación sin conexión y algunas otras cosas de la capa de sesión.
