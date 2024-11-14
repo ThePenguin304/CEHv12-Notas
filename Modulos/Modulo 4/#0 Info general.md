@@ -1,5 +1,7 @@
 # MODULO 4: ENUMERACIÓN
 
+Redirección a [módulos](https://github.com/ThePenguin304/CEHv12-Notas/tree/main/Modulos)
+
 Módulo basado en *identificar y recopilar información detallada de sistemas y redes para planificar ataques*.
 
 
