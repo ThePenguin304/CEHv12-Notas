@@ -1,5 +1,7 @@
 # 4. Técnicas de enumeración LDAP
 
+Redirección a [Información General](https://github.com/ThePenguin304/CEHv12-Notas/blob/main/Modulos/Modulo%204/%230%20Info%20general.md)
+
 ## 1. LDAP
 
 `LDAP (Lightweight Directory Access Protocol)` es un protocolo de red utilizado para acceder y gestionar directorios distribuidos de información. Estos directorios suelen contener datos sobre usuarios, equipos, aplicaciones, servicios y otros recursos dentro de una red. LDAP se emplea principalmente para organizar y realizar búsquedas en bases de datos jerárquicas a gran escala.
