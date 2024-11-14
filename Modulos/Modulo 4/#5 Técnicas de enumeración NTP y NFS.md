@@ -1,4 +1,4 @@
-# Técnicas de enumeración NTP y NFS
+# 5. Técnicas de enumeración NTP y NFS
 
 Redirección a [Información General](https://github.com/ThePenguin304/CEHv12-Notas/blob/main/Modulos/Modulo%204/%230%20Info%20general.md)
 
@@ -6,7 +6,7 @@ Redirección a [Información General](https://github.com/ThePenguin304/CEHv12-No
 
 `NFS (Network File System)` Es un protocolo de archivos distribuido que permite a los clientes acceder a archivos en sistemas remotos a través de la red. Los atacantes pueden enumerar los sistemas NFS para obtener información sobre qué directorios están exportados y qué permisos tienen.
 
-## NTP
+## 5.1 NTP
 
 UDP Puerto 123
 
@@ -15,7 +15,7 @@ Información que el atacante desea extraer:
 - Direcciones IP de los clientes en una red, sus nombres de sistema y sistemas operativos
 - Las direcciones IP internas también se pueden obtener si el servidor NTP está en la zona desmilitarizada (DMZ)
 
-### Comandos
+### 5.1.1 Comandos
 
 `ntpdate` Se utiliza para sincronizar la hora del sistema con un servidor NTP específico. A diferencia de ntpd, que mantiene la sincronización continua en segundo plano, ntpdate realiza una sincronización puntual (solo una vez en el momento de ejecución). Esto es útil cuando necesitas ajustar rápidamente la hora de una máquina o verificar si está sincronizada correctamente con el servidor NTP.
 
@@ -59,11 +59,11 @@ ntpq -p 192.168.1.100
 +192.168.1.2     127.127.1.0   10 u   38   64  377    0.018    0.002   0.002
 ```
 
-### Herramientas de enumeración NTP
+### 5.1.2 Herramientas de enumeración NTP
 
 `PRTG Network Monitor` incluye SNTP Sensor monitor, un servidor SNTP que compara la diferencia de tiempo de respuesta entre el servidor y el sistema local.
 
-## NFS
+## 5.2 NFS
 
 Protocolo que permite a los sistemas conectados en una red compartir archivos y directorios de manera remota, como si estuvieran en el propio sistema local. Esto facilita la gestión y el acceso compartido a archivos y permite a los usuarios trabajar con archivos remotos sin necesidad de transferirlos manualmente.
 
@@ -87,7 +87,7 @@ Para ver la lista de ficheros y directorios compartidos se usa el siguiente coma
 showmount -e <Target IP Addres>
 ```
 
-### Herramientas enumeración NFS
+### 5.2.1 Herramientas enumeración NFS
 
 Los atacantes pueden usar otras herramientas para ganar acceso al servidor NFS y subir ficheros malignos para realizar ataques a futuro.
 
