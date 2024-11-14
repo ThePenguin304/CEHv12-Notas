@@ -1,35 +1,38 @@
-# 2. Técnicas de enumeración NetBIOS
+# Técnicas de Enumeración NetBIOS
 
-Redirección a [Información General](https://github.com/ThePenguin304/CEHv12-Notas/blob/main/Modulos/Modulo%204/%230%20Info%20general.md)
+La enumeración de NetBIOS es una técnica utilizada en hacking ético para obtener información detallada sobre equipos en una red local, especialmente en entornos Windows. NetBIOS (Network Basic Input/Output System) es un protocolo que facilita la comunicación entre dispositivos de una red, permitiendo la identificación de recursos compartidos, usuarios y servicios disponibles.
 
-La enumeración de NetBIOS es una técnica utilizada en hacking ético para obtener información específica sobre equipos que están en una red local, especialmente en entornos que utilizan sistemas Windows. NetBIOS permite a los dispositivos en la red identificarse entre sí, lo cual facilita el descubrimiento de recursos compartidos, usuarios y servicios disponibles.
+**Redirección a [Información General](https://github.com/ThePenguin304/CEHv12-Notas/blob/main/Modulos/Modulo%204/%230%20Info%20general.md)**
 
-NetBIOS proporciona servicio de nombres, comunicación sin conexión y algunas otras cosas de la capa de sesión.
+---
 
-## 1. Enumeración NetBIOS
+## 1. ¿Qué es NetBIOS?
 
-Un nombre NetBIOS es una cadena única de 16 caracteres ASCII que se utiliza para identificar los dispositivos de red a través de segmento TCP/IP; se utilizan 15 caracteres para el nombre del dispositivo y el 16o carácter está reservado para el tipo de registro de servicio o nombre.
+NetBIOS es un conjunto de servicios que opera en la capa de sesión del modelo OSI y permite que las aplicaciones en una red se comuniquen entre sí. Proporciona servicios como la resolución de nombres, el manejo de conexiones y la gestión de sesiones de red. Aunque originalmente fue diseñado para redes locales, NetBIOS sigue siendo ampliamente utilizado en redes Windows.
 
-> La resolución de nombres NetBIOS no es compatible con Microsoft para el Protocolo de Internet versión 6 (IPv6)
+Un nombre NetBIOS tiene una longitud máxima de 16 caracteres ASCII. Los primeros 15 caracteres representan el nombre del dispositivo o recurso en la red, y el último carácter se reserva para denotar el tipo de servicio o nombre.
 
-Objectivo de la enumeración:
- - Nombres de usuario y grupos de trabajo.
- - Recursos compartidos en la red (archivos, impresoras).
- - Políticas de seguridad y configuración.
- - Direcciones IP y nombres de equipo del dominio.
+> **Importante:** NetBIOS no es compatible con IPv6 en sistemas Microsoft.
 
-> NetBIOS se considera primero para la enumeración porque extrae una gran cantidad de información confidencial sobre la red de destino, como usuarios y recursos compartidos de red. Los atacantes generalmente apuntan al servicio NetBIOS porque es fácil de explotar y ejecutar en sistemas Windows incluso cuando no está en uso.
+### Objetivos de la enumeración NetBIOS:
 
-> Un atacante que encuentre un sistema Windows con el puerto 139 abierto puede comprobar a qué recursos se puede acceder o visualizar en un sistema remoto. Sin embargo, para enumerar los nombres NetBIOS, el sistema remoto debe tener habilitado el uso compartido de archivos e impresoras.
+- **Nombres de usuario y grupos de trabajo.**
+- **Recursos compartidos en la red** (archivos, impresoras).
+- **Políticas de seguridad y configuración.**
+- **Direcciones IP y nombres de equipo del dominio.**
 
-## 2. Herramientas
+> **Razón de su uso:** NetBIOS es una fuente rica de información confidencial sobre la red, como nombres de usuarios, recursos compartidos y configuraciones. Esto lo convierte en un objetivo prioritario para los atacantes, quienes pueden explotar vulnerabilidades aunque NetBIOS no esté en uso activo.
+
+---
+
+## 2. Herramientas para la Enumeración NetBIOS
 
 ### Nbtstat
 
-Es una utilidad en Windows que permite a los administradores de red ver la tabla de nombres NetBIOS de un equipo remoto.
+`nbtstat` es una herramienta de línea de comandos de Windows que permite ver la tabla de nombres NetBIOS de un equipo remoto.
 
-Comandos útiles:
-Idle
+#### Comandos útiles:
+
 |Comandos|Descripción|
 |-------|-----|
 |`-a <NombreRemoto>`|Muestra la tabla de nombres NetBIOS de un equipo remoto, donde NombreRemoto es el nombre de equipo NetBIOS del equipo remoto|
