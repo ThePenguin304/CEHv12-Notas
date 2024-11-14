@@ -1,3 +1,7 @@
+# Preguntas Test Módulo 4
+
+Redirección a [Información General](https://github.com/ThePenguin304/CEHv12-Notas/blob/main/Modulos/Modulo%204/%230%20Info%20general.md)
+
 1. **¿Qué herramienta se utiliza comúnmente para realizar la enumeración de servicios SMB en una red?**
     
    a) Nmap  
