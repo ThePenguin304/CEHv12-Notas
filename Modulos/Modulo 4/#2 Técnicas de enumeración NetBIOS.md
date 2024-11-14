@@ -56,6 +56,8 @@ nbtstat -A 192.168.1.10 -r -c -s `
 
 >-s: Muestra las sesiones de NetBIOS activas y el estado de cada conexión.
 
+Redirección a [NetBIOS Name List](https://github.com/ThePenguin304/CEHv12-Notas/blob/main/Modulos/Modulo%204/NetBIOS%20Name%20List%20Consulta.md)
+
 ### NetBIOS Tools
 
 Las herramientas de enumeración NetBIOS exploran y escanean una red dentro de un rango determinado de direcciones IP y listas de computadoras para identificar fallas o vulnerabilidades de seguridad en los sistemas en red. Estas herramientas también enumeran sistemas operativos (OS), usuarios, grupos, identificadores de seguridad (SID), políticas de contraseñas, servicios, paquetes de servicios y revisiones, recursos compartidos NetBIOS, transportes, sesiones, discos y registros de eventos de seguridad, etc.
