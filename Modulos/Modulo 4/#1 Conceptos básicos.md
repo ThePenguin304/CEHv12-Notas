@@ -1,5 +1,7 @@
 # 1. Conceptos básicos de la enumeración
 
+Redirección a [Información General](https://github.com/ThePenguin304/CEHv12-Notas/blob/main/Modulos/Modulo%204/%230%20Info%20general.md)
+
 ## 1. ¿Qué es la Enumeración?
 
 La enumeración es un proceso activo que busca recopilar información detallada sobre sistemas, redes o servicios de un objetivo después de realizar un escaneo de red. Para ello se crean conexiones activas con el "target".
