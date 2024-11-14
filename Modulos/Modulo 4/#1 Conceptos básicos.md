@@ -28,7 +28,7 @@ Se utiliza para identificar recursos compartidos, usuarios, grupos, puertos abie
 
 ## 2. Técnicas para la Enumeración
 
-1. Extracción de los usuarios usando los ID's de los mails
+### 2.1. Extracción de los usuarios usando los ID's de los mails
 
 Esta técnica se basa en la obtención de nombres de usuario o IDs de correo electrónico asociados a un dominio específico, lo cual facilita la identificación de cuentas válidas en el sistema objetivo.
 
@@ -38,7 +38,7 @@ Esta técnica se basa en la obtención de nombres de usuario o IDs de correo ele
 
 ---
 
-2. Extracción de información usando contraseñas por defecto
+### 2.2. Extracción de información usando contraseñas por defecto
 
 Muchos dispositivos y sistemas operativos utilizan contraseñas predeterminadas, que son conocidas o fácilmente adivinables. Los atacantes aprovechan estas contraseñas para acceder sin autorización a los sistemas.
 
@@ -48,7 +48,7 @@ Muchos dispositivos y sistemas operativos utilizan contraseñas predeterminadas,
 
 ---
 
-3. Extracción de información usando fuerza bruta en Active Directory (AD)
+### 2.3. Extracción de información usando fuerza bruta en Active Directory (AD)
 
 En entornos de **Windows** con **Active Directory (AD)**, los atacantes pueden realizar ataques de fuerza bruta para adivinar contraseñas de usuarios y obtener acceso a las cuentas.
 
@@ -58,7 +58,7 @@ En entornos de **Windows** con **Active Directory (AD)**, los atacantes pueden r
 
 ---
 
-4. Extracción de información mediante "DNS Zone Transfer"
+### 2.4. Extracción de información mediante "DNS Zone Transfer"
 
 Un **DNS Zone Transfer** permite a los atacantes obtener una copia completa de la base de datos DNS de un servidor, revelando información sobre subdominios, direcciones IP y otros detalles clave de la infraestructura de la red.
 
@@ -68,7 +68,7 @@ Un **DNS Zone Transfer** permite a los atacantes obtener una copia completa de l
 
 ---
 
-5. Extracción de grupos de usuarios en Windows
+### 2.5. Extracción de grupos de usuarios en Windows
 
 En entornos **Windows**, los grupos de usuarios pueden proporcionar información valiosa sobre la estructura y privilegios de los usuarios dentro de un dominio o máquina local.
 
@@ -78,7 +78,7 @@ En entornos **Windows**, los grupos de usuarios pueden proporcionar información
 
 ---
 
-6. Extracción de nombres de usuario usando SNMP
+### 2.6. Extracción de nombres de usuario usando SNMP
 
 El **Simple Network Management Protocol (SNMP)** se utiliza para gestionar y supervisar dispositivos de red. Si está mal configurado, puede exponer información sensible, incluidos los nombres de usuario en dispositivos como routers y switches.
 
