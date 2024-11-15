@@ -21,9 +21,9 @@ Módulo basado en *identificar y recopilar información detallada de sistemas y 
 
    (5) [Explicar las diferentes técnicas para la enumeración NTP y NFS](https://github.com/ThePenguin304/CEHv12-Notas/blob/main/Modulos/Modulo%204/T%C3%A9cnicas%20de%20enumeraci%C3%B3n%20NTP%20y%20NFS.md)
 
-   (6) Explicar las diferentes técnicas para la enumeración SMTP y DNS
+   (6) [Explicar las diferentes técnicas para la enumeración SMTP y DNS](https://github.com/ThePenguin304/CEHv12-Notas/blob/main/Modulos/Modulo%204/%236%20T%C3%A9cnicas%20de%20enumeraci%C3%B3n%20SMTP%20y%20DNS.md)
    
-   (7) Explicar otras técnicas de enumeración como IPsec, VoIP, RPC, Linux/Unix, Telnet, FTP, TFTP, SMB, IPv6 y BGP
+   (7) [Explicar otras técnicas de enumeración como IPsec, VoIP, RPC, Linux/Unix, Telnet, FTP, TFTP, SMB, IPv6 y BGP](https://github.com/ThePenguin304/CEHv12-Notas/blob/main/Modulos/Modulo%204/%237%20Otras%20t%C3%A9cnicas%20de%20enumeraci%C3%B3n.md)
    
    (8) Aplicar contramedidas de enumeración
 
