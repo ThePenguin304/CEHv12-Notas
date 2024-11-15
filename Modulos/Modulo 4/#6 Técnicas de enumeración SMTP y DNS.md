@@ -1,4 +1,4 @@
-# 5. Técnicas de enumeración SMTP y DNS
+# 6. Técnicas de enumeración SMTP y DNS
 
 Redirección a [Información General](https://github.com/ThePenguin304/CEHv12-Notas/blob/main/Modulos/Modulo%204/%230%20Info%20general.md)
 
@@ -6,7 +6,7 @@ Redirección a [Información General](https://github.com/ThePenguin304/CEHv12-No
 
 `DNS (Network File System)` Sistema encargado de traducir nombres de dominio legibles por humanos (como ejemplo.com) en direcciones IP (como 192.168.1.1) que las computadoras pueden utilizar para comunicarse entre sí.
 
-## 5.1 SMTP
+## 6.1 SMTP
 
 Se usa com POP3 y IMAP, lo que permite guardar los correos y bajarlos cuando es necesario.
 
@@ -23,7 +23,7 @@ Los atacantes pueden interactuar com el servidor STMP directamente con Telnet pr
 
 > Telnet es un protocolo que permite a los usuarios establecer una conexión remota con otro dispositivo en la red y trabajar en él como si estuvieran físicamente en la máquina.
 
-### 5.1.1 Enumeración usando NMAP y METASPLOIT
+### 6.1.1 Enumeración usando NMAP y METASPLOIT
 
 ### NMAP
 
