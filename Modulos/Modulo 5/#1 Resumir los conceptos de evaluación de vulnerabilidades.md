@@ -118,7 +118,74 @@ Limitaciones:
 - Capacidad limitada en un tiempo específico.
 - Requiere estar actualizado el software que lanza los escaneos.
 - No mida la fuerza de los controles de seguridad.
-- 
+- Complejidad de los informes reportados.
+
+## Sistemas de puntuación de vulnerabilidades y bases de datos
+
+Para gestionar y priorizar vulnerabilidades de manera efectiva, los profesionales de la ciberseguridad utilizan estándares y bases de datos reconocidos a nivel global. A continuación, se describen los sistemas más comunes:
+
+### CVSS (Common Vulnerability Scoring System)
+
+¿Qué es?
+Un estándar para puntuar la severidad de las vulnerabilidades.
+
+Escala: 0.0 a 10.0 (0 = sin impacto, 0.1 - 3.9 = Bajo, 4-0 - 6.9 = Medio, 7.0 - 8.9 = Alto, 10 = impacto crítico).
+Ayuda a determinar la urgencia de aplicar parches o medidas de mitigación.
+Componentes de puntuación:
+
+Base Score: Evalúa características inherentes a la vulnerabilidad (exploitabilidad e impacto).
+Temporal Score: Considera factores temporales, como la disponibilidad de exploits o parches.
+Environmental Score: Adapta la puntuación al entorno específico de la organización afectada.
+Ejemplo: Una vulnerabilidad con CVSS de 9.8 es crítica y requiere atención inmediata.
+
+### CVE(Common Vulnerabilities and Exposures)
+¿Qué es?
+Un identificador único para vulnerabilidades conocidas, mantenido por MITRE.
+
+Formato: CVE-año-número (Ej.: CVE-2024-12345).
+Actúa como un identificador universal para que los equipos técnicos puedan referirse a vulnerabilidades de manera consistente.
+Beneficios:
+
+Facilita la comunicación entre equipos.
+Vincula herramientas y bases de datos (por ejemplo, NVD).
+Ejemplo: CVE-2024-12345 puede ser una vulnerabilidad en un servidor web popular.
+
+### NVD(National Vulnerability Database)
+¿Qué es?
+Una base de datos mantenida por el NIST (National Institute of Standards and Technology) en EE.UU.
+
+Incluye detalles de vulnerabilidades referenciadas por CVE.
+Proporciona puntuaciones CVSS, descripciones y métricas adicionales.
+Usos:
+
+Buscar información técnica detallada.
+Evaluar y priorizar vulnerabilidades en un entorno específico.
+Ejemplo: Al buscar un CVE en NVD, se obtienen datos como el CVSS, soluciones disponibles y posibles mitigaciones.
+
+### CWE(Common Weakness Enumeration)
+¿Qué es?
+Un catálogo de fallos de seguridad comunes en el software y diseño del sistema.
+
+Mantenido también por MITRE.
+Se enfoca en las causas subyacentes de las vulnerabilidades.
+Clasificación de debilidades:
+
+Ejemplo: CWE-79 (Cross-Site Scripting), CWE-89 (SQL Injection).
+Relación con CVE:
+
+Cada vulnerabilidad referenciada en CVE puede tener una o más debilidades CWE asociadas, lo que ayuda a los desarrolladores a entender el problema raíz.
+
+Relación entre CVSS, CVE, NVD y CWE:
+CVE: Identifica la vulnerabilidad.
+NVD: Proporciona detalles técnicos y puntuación CVSS.
+CVSS: Ayuda a priorizar según la gravedad.
+CWE: Describe la causa raíz o el tipo de debilidad.
+Estos sistemas y bases de datos son esenciales para evaluar riesgos, gestionar vulnerabilidades y proteger los sistemas de manera proactiva.
+
+
+
+
+
 
 
 
