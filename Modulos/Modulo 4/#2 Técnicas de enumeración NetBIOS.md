@@ -2,7 +2,7 @@
 
 La enumeración de NetBIOS es una técnica utilizada en hacking ético para obtener información detallada sobre equipos en una red local, especialmente en entornos Windows. NetBIOS (Network Basic Input/Output System) es un protocolo que facilita la comunicación entre dispositivos de una red, permitiendo la identificación de recursos compartidos, usuarios y servicios disponibles.
 
-**Redirección a [Información General](https://github.com/ThePenguin304/CEHv12-Notas/blob/main/Modulos/Modulo%204/%230%20Info%20general.md)**
+**Redirección a [Información General](https://github.com/ThePenguin304/CEHv12-Notas/blob/main/Modulos/Modulo%204/README.md)**
 
 ---
 
