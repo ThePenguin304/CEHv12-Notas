@@ -1,6 +1,6 @@
 # 4. Técnicas de enumeración LDAP
 
-Redirección a [Información General](https://github.com/ThePenguin304/CEHv12-Notas/blob/main/Modulos/Modulo%204/%230%20Info%20general.md)
+Redirección a [Información General](https://github.com/ThePenguin304/CEHv12-Notas/blob/main/Modulos/Modulo%204/README.md)
 
 ## 1. LDAP
 
