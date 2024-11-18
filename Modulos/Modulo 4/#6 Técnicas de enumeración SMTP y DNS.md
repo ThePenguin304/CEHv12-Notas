@@ -1,6 +1,6 @@
 # 6. Técnicas de enumeración SMTP y DNS
 
-Redirección a [Información General](https://github.com/ThePenguin304/CEHv12-Notas/blob/main/Modulos/Modulo%204/%230%20Info%20general.md)
+Redirección a [Información General](https://github.com/ThePenguin304/CEHv12-Notas/blob/main/Modulos/Modulo%204/README.md)
 
 `SMTP (Simple Mail Transfer Protocol)` Protocolo estándar para envío de correos electrónicos en internet. Funciona en el puerto 25 (o el puerto 587 en conexiones autenticadas) y establece las reglas para enviar mensajes de correo de un servidor a otro.
 
