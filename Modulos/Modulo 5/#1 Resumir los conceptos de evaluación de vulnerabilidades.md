@@ -182,9 +182,49 @@ CVSS: Ayuda a priorizar según la gravedad.
 CWE: Describe la causa raíz o el tipo de debilidad.
 Estos sistemas y bases de datos son esenciales para evaluar riesgos, gestionar vulnerabilidades y proteger los sistemas de manera proactiva.
 
+## Ciclo de vide de una vulnerabilidad
 
+El ciclo de vida de una vulnerabilidad comprende diversas fases diseñadas para gestionar de manera efectiva las debilidades identificadas en sistemas o redes. Este proceso permite priorizar, remediar y monitorear vulnerabilidades para minimizar riesgos.
 
+### Fase pre-evaluatoria
 
+Descripción: Identificación de activos y establecimiento de estrategias para la gestión de vulnerabilidades.
+Pasos clave:
+- Identificar bienes críticos: ¿Qué sistemas o datos son más valiosos?
+- Definir líneas de acción: Crear políticas y procedimientos para la evaluación de vulnerabilidades.
+- Asignar responsabilidades: Determinar quién liderará las actividades de evaluación y mitigación.
+Objetivo: Preparar la infraestructura para una gestión proactiva de vulnerabilidades.
+
+### Escaneo de vulnerabilidades
+
+Descripción: Uso de herramientas automatizadas para identificar debilidades en sistemas, redes o aplicaciones.
+Pasos clave:
+- Seleccionar herramientas de escaneo (por ejemplo, Nessus, OpenVAS).
+- Ejecutar escaneos en sistemas, redes o aplicaciones específicas.
+- Generar reportes con vulnerabilidades detectadas, severidad y ubicación.
+Objetivo: Identificar todas las posibles vulnerabilidades en el entorno.
+
+### Post Evaluación
+
+Una vez identificadas las vulnerabilidades, se toman medidas para mitigar riesgos.
+
+1. Evaluación del riesgo:
+- Determinar el impacto y la probabilidad de explotación de cada vulnerabilidad.
+- Priorizar según la severidad (por ejemplo, con puntuaciones CVSS).
+
+2.Remediaciones:
+- Aplicar parches, reconfigurar sistemas o tomar medidas correctivas según las prioridades.
+- Ejemplo: Actualizar software vulnerable o cambiar configuraciones inseguras.
+
+3. Verificaciones:
+- Comprobar que las vulnerabilidades se han mitigado correctamente.
+- Realizar escaneos de validación para confirmar la eliminación de las debilidades.
+  
+4. Monitoreo continuo:
+- Implementar sistemas de monitoreo para detectar nuevas vulnerabilidades.
+- Revisar periódicamente las políticas y los escaneos para adaptarse a amenazas emergentes.
+
+Este proceso asegura una gestión estructurada de las vulnerabilidades, lo que ayuda a proteger los sistemas frente a amenazas dinámicas y garantiza que los riesgos se reduzcan de manera efectiva.
 
 
 
