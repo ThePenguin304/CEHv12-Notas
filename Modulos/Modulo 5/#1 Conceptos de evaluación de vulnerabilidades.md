@@ -1,5 +1,7 @@
 # Evaluación de Vulnerabilidades
 
+Redireccionar al [módulo 5](https://github.com/ThePenguin304/CEHv12-Notas/tree/main/Modulos/Modulo%205)
+
 La **evaluación de vulnerabilidades** es un proceso esencial para identificar, clasificar y mitigar las debilidades en sistemas, redes y aplicaciones, asegurando la confidencialidad, integridad y disponibilidad de los recursos. 
 
 ## ¿Qué es una vulnerabilidad?
