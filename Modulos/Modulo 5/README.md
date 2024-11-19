@@ -4,12 +4,6 @@ Redirección a [módulos](https://github.com/ThePenguin304/CEHv12-Notas/tree/mai
 
 Módulo basado en *se centra en el proceso de identificación, clasificación y evaluación de vulnerabilidades en una red o sistema. Este análisis es un componente esencial en el ciclo de gestión de seguridad de la información, ya que permite a los administradores detectar y priorizar las áreas que necesitan atención para prevenir posibles ataques.*.
 
-
-  > Durante la enumeración, el profesional accede a datos críticos como nombres de usuario, detalles de recursos compartidos, servicios activos y posibles puntos de entrada.
-  
-  > Este módulo cubre técnicas de enumeración en sistemas operativos, servicios de red, y aplicaciones web, así como herramientas para realizar esta fase, ayudando a los hackers éticos a identificar vulnerabilidades específicas para reforzar la seguridad.
-
-
 ## Temario
    (1) [Conceptos de evaluación de vulnerabilidades](https://github.com/ThePenguin304/CEHv12-Notas/blob/main/Modulos/Modulo%205/%231%20Conceptos%20de%20evaluaci%C3%B3n%20de%20vulnerabilidades.md)
    
