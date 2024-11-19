@@ -23,4 +23,12 @@ El proceso de análisis de vulnerabilidades implica realizar escaneos periódico
 - Interpretar y analizar los informes de escaneo, comprendiendo cómo cada vulnerabilidad puede afectar al sistema.
 - Implementar estrategias de mitigación adecuadas para corregir o reducir los riesgos asociados con las vulnerabilidades identificadas.
 
-En resumen, el módulo de análisis de vulnerabilidades es esencial para comprender cómo realizar evaluaciones de seguridad continuas y tomar medidas preventivas, asegurando así la integridad y seguridad de los sistemas y redes.
+## Resumen del módulo
+
+Este módulo aborda la investigación de vulnerabilidades, la evaluación de vulnerabilidades y el ciclo de vida de gestión de vulnerabilidades. Además, se profundiza en el sistema de puntuación CVSS (Common Vulnerability Scoring System) y en las bases de datos de vulnerabilidades, explicando los diferentes tipos de vulnerabilidades y técnicas de evaluación.
+
+Se describe también una variedad de soluciones de evaluación de vulnerabilidades junto con sus características, así como herramientas específicas utilizadas para probar vulnerabilidades en hosts o aplicaciones, incluyendo los criterios y mejores prácticas para seleccionar la herramienta adecuada.
+
+Finalmente, el módulo concluye con una discusión detallada sobre cómo analizar un informe de evaluación de vulnerabilidades, y cómo este revela los riesgos detectados tras escanear una red.
+
+El próximo módulo se centrará en cómo los atacantes, así como los hackers éticos y los testers de penetración, intentan hackear sistemas basándose en la información recopilada durante las fases de footprinting, scanning, enumeration y análisis de vulnerabilidades.
