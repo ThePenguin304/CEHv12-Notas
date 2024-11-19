@@ -2,6 +2,11 @@
 
 El módulo 4 se centra en el proceso de identificación, clasificación y evaluación de vulnerabilidades en una red o sistema. Este análisis es un componente esencial en el ciclo de gestión de seguridad de la información, ya que permite a los administradores detectar y priorizar las áreas que necesitan atención para prevenir posibles ataques.
 
+- [#1 Conceptos de evaluación de vulnerabilidades](https://github.com/ThePenguin304/CEHv12-Notas/blob/main/Modulos/Modulo%205/%231%20Conceptos%20de%20evaluaci%C3%B3n%20de%20vulnerabilidades.md)
+- [#2 Explicar la clasificación de vulnerabilidades y los tipos de evaluación](https://github.com/ThePenguin304/CEHv12-Notas/blob/main/Modulos/Modulo%205/%232%20Explicar%20la%20clasificaci%C3%B3n%20de%20vulnerabilidades%20y%20los%20tipos%20de%20evaluaci%C3%B3n.md)
+- [#3 Utilizar herramientas de evaluación de vulnerabilidades](https://github.com/ThePenguin304/CEHv12-Notas/blob/main/Modulos/Modulo%205/%233%20Utilizar%20herramientas%20de%20evaluaci%C3%B3n%20de%20vulnerabilidades.md)
+- [#4 Analizar informes de evaluación de vulnerabilidades](https://github.com/ThePenguin304/CEHv12-Notas/blob/main/Modulos/Modulo%205/%234%20Analizar%20informes%20de%20evaluaci%C3%B3n%20de%20vulnerabilidades.md)
+
 ## Conceptos clave del módulo
 
 - Importancia de la información
