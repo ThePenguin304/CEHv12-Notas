@@ -1,8 +1,8 @@
 # MODULO 5: ANÁLISIS DE VULNERABILIDADES
 
-Redirección a [módulos](https://github.com/ThePenguin304/CEHv12-Notas/tree/main/Modulos)
+Redirección al apartado [módulos](https://github.com/ThePenguin304/CEHv12-Notas/tree/main/Modulos)
 
-Módulo basado en *se centra en el proceso de identificación, clasificación y evaluación de vulnerabilidades en una red o sistema. Este análisis es un componente esencial en el ciclo de gestión de seguridad de la información, ya que permite a los administradores detectar y priorizar las áreas que necesitan atención para prevenir posibles ataques.*.
+Módulo *se centra en el proceso de identificación, clasificación y evaluación de vulnerabilidades en una red o sistema. Este análisis es un componente esencial en el ciclo de gestión de seguridad de la información, ya que permite a los administradores detectar y priorizar las áreas que necesitan atención para prevenir posibles ataques.*.
 
 ## Temario
    (1) [Conceptos de evaluación de vulnerabilidades](https://github.com/ThePenguin304/CEHv12-Notas/blob/main/Modulos/Modulo%205/%231%20Conceptos%20de%20evaluaci%C3%B3n%20de%20vulnerabilidades.md)
