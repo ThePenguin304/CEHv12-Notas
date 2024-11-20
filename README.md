@@ -5,3 +5,5 @@ El CEH v12 (Certified Ethical Hacker) es una certificación de ciberseguridad of
 ## Módulos
 
 ### [Módulo 4 Enumeración](https://github.com/ThePenguin304/CEHv12-Notas/tree/main/Modulos/Modulo%204)
+
+### [Módulo 5 Enumeración](https://github.com/ThePenguin304/CEHv12-Notas/tree/main/Modulos/Modulo%205)
