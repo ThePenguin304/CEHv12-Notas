@@ -1,8 +1,8 @@
 # CEHv12
 
-El CEH v12 (Certified Ethical Hacker). Certificación de ciberseguridad ofrecida por el EC-Council.
+El CEH v12 (Certified Ethical Hacker). Certificación de ciberseguridad ofrecida por el EC-Council. Apuntes de estudio para la certificación.
 
-Apuntes de estudio para la certificación.
+---
 
 ## Módulos
 
