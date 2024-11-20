@@ -115,6 +115,7 @@ Los ataques online activos implican interacción directa con el sistema objetivo
   - Cracking de Contraseñas de Kerberos:
     - AS-REP Roasting es un ataque contra cuentas de Active Directory que tienen la opción "Do not require Kerberos preauthentication" habilitada. Este ataque explota el hecho de que, sin preautenticación, el KDC (Key Distribution Center) entrega un Ticket Granting Ticket (TGT) cifrado directamente con la clave de la contraseña del usuario, lo que permite al atacante realizar un ataque offline para descifrar la contraseña. Heraramientas: `hashcat` o `John the Ripper`.
     - Kerberoasting es un ataque contra el servicio de Kerberos donde el atacante solicita un Ticket Granting Service (TGS) para servicios asociados a cuentas en Active Directory. Este ticket está cifrado con la clave de la contraseña de la cuenta del servicio, lo que permite realizar un ataque offline para descifrar la contraseña. Herramientas: `Mimikatz`, `Impacket (GetUserSPNs.py)`, `Rubeus` o `hashcat`/`John the Ripper` para descifrar el hash.
+    - Pass-The-Ticket (PTT): Pass-the-Ticket es un ataque donde el atacante utiliza un Ticket Granting Ticket (TGT) o un Ticket Granting Service (TGS) válido y previamente robado para acceder a recursos en un entorno Kerberos, sin necesidad de conocer las credenciales originales del usuario o servicio.
       
   - Medidas de Protección:
     - Implementar autenticación multifactor (MFA).
