@@ -1,9 +1,8 @@
 # MODULO 4: ENUMERACIÓN
 
-Redirección a [módulos](https://github.com/ThePenguin304/CEHv12-Notas/tree/main/Modulos)
+Redirección a apartado [módulos](https://github.com/ThePenguin304/CEHv12-Notas/tree/main/Modulos)
 
 Módulo basado en *identificar y recopilar información detallada de sistemas y redes para planificar ataques*.
-
 
   > Durante la enumeración, el profesional accede a datos críticos como nombres de usuario, detalles de recursos compartidos, servicios activos y posibles puntos de entrada.
   
