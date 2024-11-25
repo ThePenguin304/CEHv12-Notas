@@ -72,52 +72,43 @@ Ejemplos: Ataques de fuerza bruto o de diccionario
 
 ### 1. Ataques no electrónicos
 Los ataques no electrónicos son técnicas que no requieren herramientas tecnológicas avanzadas, sino que explotan el comportamiento humano o el acceso físico para comprometer la seguridad.
-  - Social Engeenering:
-    - Manipulación psicológica para obtener información confidencial (contraseñas, datos personales, etc.) a través de engaños, como llamadas telefónicas, correos falsos o interacción directa.
-    - Protección: Capacitación y concienciación del personal, verificación estricta de identidades.
+1. Social Engeenering:
+  - Manipulación psicológica para obtener información confidencial (contraseñas, datos personales, etc.) a través de engaños, como llamadas telefónicas, correos falsos o interacción directa.
+  - Protección: Capacitación y concienciación del personal, verificación estricta de identidades.
+
+2. Shoulder surfing:
+  - Observación directa para obtener información sensible, como contraseñas, PINs o datos en pantalla, mientras alguien los introduce.
+  - Protección: Uso de protectores de pantalla de privacidad y cuidado en lugares públicos.
       
-  - Shoulder surfing:
-    - Observación directa para obtener información sensible, como contraseñas, PINs o datos en pantalla, mientras alguien los introduce.
-    - Protección: Uso de protectores de pantalla de privacidad y cuidado en lugares públicos.
-      
-  - Dumpster Diving:
-    - Búsqueda de información valiosa en documentos desechados, como facturas, notas, registros o medios de almacenamiento, que podrían haber sido eliminados de manera inapropiada.
-    - Protección: Destrucción segura de documentos mediante trituradoras y eliminación adecuada de medios digitales.
+3. Dumpster Diving:
+  - Búsqueda de información valiosa en documentos desechados, como facturas, notas, registros o medios de almacenamiento, que podrían haber sido eliminados de manera inapropiada.
+  - Protección: Destrucción segura de documentos mediante trituradoras y eliminación adecuada de medios digitales.
 
 
 ### 2. Online activos 
 Los ataques online activos implican interacción directa con el sistema objetivo para explotar vulnerabilidades o forzar credenciales. Requieren acceso a la máquina víctima y suelen generar tráfico que puede ser detectado.
-  - Ataques de Diccionario:
-    - Utilizan listas predefinidas de contraseñas comunes para intentar autenticarse.
-      
-  - Fuerza Bruta:
+1. Ataques de Diccionario:
+    - Utilizan listas predefinidas de contraseñas comunes para intentar autenticarse.  
+2. Fuerza Bruta:
     - Prueba sistemática de todas las combinaciones posibles de contraseñas hasta encontrar la correcta.
-      
-  - Ataques Basados en Reglas:
+3. Ataques Basados en Reglas:
     - Personalizan ataques de fuerza bruta o diccionario aplicando transformaciones, como añadir números o caracteres especiales.
-      
-  - Ataque de Hash Injection:
+4. Ataque de Hash Injection:
     - Inyección de un hash robado directamente en un proceso para obtener acceso sin conocer la contraseña original.
-      
-  - Envenenamiento de LLMNR/NBT-NS:
+5. Envenenamiento de LLMNR/NBT-NS:
     - Explota protocolos de resolución de nombres en redes locales para interceptar credenciales.
-      
-  - Troyanos/Spyware/Keyloggers:
+6. Troyanos/Spyware/Keyloggers:
     - Instalación de malware para capturar contraseñas o datos directamente desde la máquina víctima.
-      
-  - Password Guessing/Spraying:
+7. Password Guessing/Spraying:
     - Prueba de contraseñas comunes contra múltiples cuentas para evitar bloqueos por intentos fallidos.
     - Herramienta: `CrackMapExec`.
-      
-  - Ataque de Monólogo Interno (Internal Monologue):
-    - Abusa del proceso interno de validación de contraseñas en sistemas Windows para obtener hashes de NTLM sin interacciones de red.
-      
-  - Cracking de Contraseñas de Kerberos:
+8. Ataque de Monólogo Interno (Internal Monologue):
+    - Abusa del proceso interno de validación de contraseñas en sistemas Windows para obtener hashes de NTLM sin interacciones de red. 
+9. Cracking de Contraseñas de Kerberos:
     - AS-REP Roasting es un ataque contra cuentas de Active Directory que tienen la opción "Do not require Kerberos preauthentication" habilitada. Este ataque explota el hecho de que, sin preautenticación, el KDC (Key Distribution Center) entrega un Ticket Granting Ticket (TGT) cifrado directamente con la clave de la contraseña del usuario, lo que permite al atacante realizar un ataque offline para descifrar la contraseña. Heraramientas: `hashcat` o `John the Ripper`.
     - Kerberoasting es un ataque contra el servicio de Kerberos donde el atacante solicita un Ticket Granting Service (TGS) para servicios asociados a cuentas en Active Directory. Este ticket está cifrado con la clave de la contraseña de la cuenta del servicio, lo que permite realizar un ataque offline para descifrar la contraseña. Herramientas: `Mimikatz`, `Impacket (GetUserSPNs.py)`, `Rubeus` o `hashcat`/`John the Ripper` para descifrar el hash.
-    - Pass-The-Ticket (PTT): Pass-the-Ticket es un ataque donde el atacante utiliza un Ticket Granting Ticket (TGT) o un Ticket Granting Service (TGS) válido y previamente robado para acceder a recursos en un entorno Kerberos, sin necesidad de conocer las credenciales originales del usuario o servicio.
-      
-  - Medidas de Protección:
+    - Pass-The-Ticket (PTT): Pass-the-Ticket es un ataque donde el atacante utiliza un Ticket Granting Ticket (TGT) o un Ticket Granting Service (TGS) válido y previamente robado para acceder a recursos en un entorno Kerberos, sin necesidad de conocer las credenciales originales del usuario o servicio. 
+10. Medidas de Protección:
     - Implementar autenticación multifactor (MFA).
     - Monitorizar y analizar el tráfico en busca de comportamientos anómalos.
     - Configurar políticas de bloqueo por intentos fallidos.
@@ -126,16 +117,16 @@ Los ataques online activos implican interacción directa con el sistema objetivo
 
 ### 3. Online pasivos 
 Los ataques online pasivos se enfocan en interceptar y analizar datos sin alterar el tráfico o los sistemas. Su objetivo principal es capturar información sensible como contraseñas, hashes o datos confidenciales.
-  -  Wire Sniffing:
+1. Wire Sniffing:
     - Captura de tráfico de red utilizando herramientas como Wireshark o tcpdump para analizar paquetes en busca de credenciales u otros datos sensibles que puedan transmitirse en texto plano.
   
-  -  MITM
+2. MITM
     - El atacante se posiciona entre el cliente y el servidor para interceptar, registrar y potencialmente modificar la comunicación. Ejemplos: ataques ARP spoofing o en redes Wi-Fi abiertas.
   
-  -  Replay Attack
+3. Replay Attack
     - Consiste en capturar un paquete o sesión válida y reproducirla posteriormente para obtener acceso sin necesidad de las credenciales originales. Ejemplo: reutilización de tokens o cookies.
 
-  - Medidas de protección:
+4. Medidas de protección:
     - Cifrado de tráfico: Implementar protocolos como HTTPS, SSL/TLS y VPN para proteger los datos en tránsito.
     - Autenticación robusta: Usar autenticación basada en tokens o con marcas temporales (timestamp) para mitigar ataques de repetición.
     - Seguridad en redes: Configurar firewalls, segmentar redes y deshabilitar protocolos inseguros.
@@ -143,15 +134,13 @@ Los ataques online pasivos se enfocan en interceptar y analizar datos sin altera
   
 ### 4. Ataques offline 
 Los ataques offline se producen cuando el atacante obtiene una copia de los hashes de contraseñas desde el sistema objetivo y los procesa fuera de este, utilizando sus propios recursos para descifrar las contraseñas sin alertar a la víctima.
-  - Rainbow Table Attack (Pre-Computed Hashes):
+1. Rainbow Table Attack (Pre-Computed Hashes):
     - Utiliza tablas precomputadas que contienen pares de contraseñas y sus hashes. El atacante compara los hashes obtenidos con los de la tabla para descifrar rápidamente las contraseñas.
-    - Protección: Usar salting (agregar un valor aleatorio único a cada contraseña antes de calcular su hash) para invalidar las tablas.
-      
-  - Distributed Network Attack.
+    - Protección: Usar salting (agregar un valor aleatorio único a cada contraseña antes de calcular su hash) para invalidar las tablas.  
+2. Distributed Network Attack.
     - Divide el proceso de descifrado en múltiples sistemas distribuidos, utilizando la potencia combinada de varias máquinas para acelerar el crackeo. Es eficaz para ataques de fuerza bruta en grandes volúmenes de datos.
-    - Implementar políticas de contraseñas fuertes y limitar el número de intentos de inicio de sesión.
-      
-  - Medidas de Protección:
+    - Implementar políticas de contraseñas fuertes y limitar el número de intentos de inicio de sesión.   
+3. Medidas de Protección:
     - Hashing seguro: Utilizar algoritmos robustos como bcrypt, Argon2 o PBKDF2 con sal.
     - Almacenamiento seguro: Proteger los archivos de contraseñas con permisos restrictivos y cifrado.
     - Supervisión de accesos: Monitorizar intentos de acceso no autorizados o descargas sospechosas de ficheros.
