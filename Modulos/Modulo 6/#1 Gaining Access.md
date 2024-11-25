@@ -91,19 +91,33 @@ Los ataques online activos implican interacción directa con el sistema objetivo
     - Utilizan listas predefinidas de contraseñas comunes para intentar autenticarse.  
 2. Fuerza Bruta:
     - Prueba sistemática de todas las combinaciones posibles de contraseñas hasta encontrar la correcta.
+    - Mask Atack: En lugar de intentar todas las combinaciones posibles de caracteres, el Mask Attack utiliza un formato (máscara) predefinido para reducir el número de intentos. Esto se hace especificando Longitud de la contraseña, Tipos de caracteres en cada posición (letras, números, símbolos) y Caracteres específicos que ya se conocen.
 3. Ataques Basados en Reglas:
     - Personalizan ataques de fuerza bruta o diccionario aplicando transformaciones, como añadir números o caracteres especiales.
 4. Ataque de Hash Injection:
     - Inyección de un hash robado directamente en un proceso para obtener acceso sin conocer la contraseña original.
 5. Envenenamiento de LLMNR/NBT-NS:
     - Explota protocolos de resolución de nombres en redes locales para interceptar credenciales.
+    - El envenenamiento de LLMNR (Link-Local Multicast Name Resolution) y NBT-NS (NetBIOS Name Service) es una técnica utilizada en redes para capturar credenciales o realizar ataques de redirigimiento (man-in-the-middle).
+    1.  Escaneo de red: El atacante analiza la red para identificar objetivos vulnerables. Equipos que utilicen LLMNR o NBT-NS para resolver nombres.
+    2.  Generar una solicitud fallida: Cuando un usuario o un equipo en la red intenta acceder a un recurso (como una unidad de red, impresora, o servidor) y no se puede resolver el nombre a una dirección IP mediante DNS, el sistema intenta resolverlo utilizando LLMNR o NBT-NS. LLMNR: Permite la resolución de nombres entre equipos en la misma red local, incluso si no hay un servidor DNS disponible y NBT-NS: Realiza funciones similares, pero es más antiguo y específico de NetBIOS.
+    3.  Intercepción y respuesta falsa: El atacante, utilizando herramientas como Responder, MITMf o Inveigh, escucha estas solicitudes en la red. Cuando detecta una solicitud de resolución, responde haciéndose pasar por el recurso solicitado.
+    4.  Captura de credenciales: Una vez que la víctima intenta autenticarse en el recurso "falso" proporcionado por el atacante, el sistema de la víctima enviará sus credenciales de autenticación. Estas credenciales suelen estar en formato de hash, como: NTLMv1 o NTLMv2
+    5.  Cracking de hashes: Con los hashes obtenidos, el atacante puede: Realizar Pass-the-Hash: Usar los hashes directamente para autenticarse sin necesidad de descifrarlos o Descifrar los hashes: Utilizando herramientas como Hashcat o John the Ripper, combinadas con diccionarios o ataques de fuerza bruta, puede descifrar la contraseña original.
 6. Troyanos/Spyware/Keyloggers:
     - Instalación de malware para capturar contraseñas o datos directamente desde la máquina víctima.
 7. Password Guessing/Spraying:
     - Prueba de contraseñas comunes contra múltiples cuentas para evitar bloqueos por intentos fallidos.
-    - Herramienta: `CrackMapExec`.
+    - Password spraying se puede realizar en puertos comunes como MSSQL (1433/TCP), SSH (22/TCP), FTP (21/TCP), SMB (445/TCP), Telnet (23/TCP) y Kerberos (88/TCP).
+    - Herramienta: `CrackMapExec` o `Kerbrute`.
+```bash
+crackmapexec smb <IP> -u users.txt -p passwords.txt
+
+spray.sh -smb <targetIP> <usernameList> <passwordList> <AttemptsPerLockoutPeriod> <LockoutPeriodInMinutes> <DOMAIN>
+```
+
 8. Ataque de Monólogo Interno (Internal Monologue):
-    - Abusa del proceso interno de validación de contraseñas en sistemas Windows para obtener hashes de NTLM sin interacciones de red. 
+    - Abusa del proceso interno de validación de contraseñas en sistemas Windows para obtener hashes de NTLM sin interacciones de red. Usa SSPI (Security Support Provider Interface). NTLM response.
 9. Cracking de Contraseñas de Kerberos:
     - AS-REP Roasting es un ataque contra cuentas de Active Directory que tienen la opción "Do not require Kerberos preauthentication" habilitada. Este ataque explota el hecho de que, sin preautenticación, el KDC (Key Distribution Center) entrega un Ticket Granting Ticket (TGT) cifrado directamente con la clave de la contraseña del usuario, lo que permite al atacante realizar un ataque offline para descifrar la contraseña. Heraramientas: `hashcat` o `John the Ripper`.
     - Kerberoasting es un ataque contra el servicio de Kerberos donde el atacante solicita un Ticket Granting Service (TGS) para servicios asociados a cuentas en Active Directory. Este ticket está cifrado con la clave de la contraseña de la cuenta del servicio, lo que permite realizar un ataque offline para descifrar la contraseña. Herramientas: `Mimikatz`, `Impacket (GetUserSPNs.py)`, `Rubeus` o `hashcat`/`John the Ripper` para descifrar el hash.
