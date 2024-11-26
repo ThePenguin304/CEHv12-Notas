@@ -231,7 +231,3 @@ Los ataques offline se producen cuando el atacante obtiene una copia de los hash
 ### Herramientas para detectar LLMNR/NBT-NS Poisoning
 - Vindicate
 - Respounder
-
----
-
-## 6.2 Vulnerability Explotation
