@@ -227,3 +227,39 @@ Casos de uso:
 ## OllyDbg
 OllyDbg es un depurador estático para programas de Windows que permite el análisis de código binario en busca de vulnerabilidades. Es ampliamente utilizado por los analistas de malware y los pentesters para analizar binarios y estudiar su comportamiento.
 
+---
+
+# Defensa contra los Desbordamientos de Búfer (Buffer Overflows)
+
+### 1. Desarrollar programas siguiendo prácticas y directrices de codificación segura
+Es fundamental crear software siguiendo estándares y mejores prácticas de seguridad para minimizar los riesgos de desbordamientos de búfer y otras vulnerabilidades. Esto incluye la validación de entradas, el uso de bibliotecas seguras y evitando la ejecución de código no seguro.
+
+### 2. Usar la técnica de Randomización del Espacio de Direcciones (ASLR)
+La **ASLR** (Address Space Layout Randomization) es una técnica de seguridad que aleatoriza las direcciones de memoria utilizadas por un programa, lo que hace más difícil para un atacante predecir la ubicación de las funciones y datos importantes del programa, dificultando la explotación de vulnerabilidades como los desbordamientos de búfer.
+
+### 3. Validar los argumentos y minimizar el código que requiere privilegios de root
+Siempre que sea posible, valida las entradas del usuario y evita dar privilegios de root o administrador a partes del código que no los necesiten. Esto reduce el riesgo de que un atacante pueda ejecutar código malicioso con privilegios elevados.
+
+### 4. Realizar revisiones de código a nivel de código fuente utilizando analizadores estáticos y dinámicos
+Las herramientas de análisis estático y dinámico ayudan a identificar vulnerabilidades, como los desbordamientos de búfer, sin necesidad de ejecutar el código. Los analizadores estáticos revisan el código fuente, mientras que los dinámicos monitorean el comportamiento del programa durante la ejecución.
+
+### 5. Permitir que el compilador añada límites a todos los búferes e implementar comprobaciones automáticas de límites
+La mayoría de los compiladores modernos permiten habilitar opciones para realizar comprobaciones de límites en los búferes durante la compilación. Esto ayuda a prevenir desbordamientos al garantizar que los datos no se escriban fuera de los límites de los búferes.
+
+### 6. Siempre proteger el puntero de retorno en la pila
+El puntero de retorno en la pila es un objetivo común de los atacantes, que pueden sobrescribirlo durante un desbordamiento de búfer. Utilizar técnicas como el **Stack Canaries** o la **Protección de Puntero de Retorno** ayuda a prevenir este tipo de ataques.
+
+### 7. Nunca permitir la ejecución de código fuera del espacio de código
+Utiliza medidas como **Data Execution Prevention** (DEP) para asegurarte de que las regiones de memoria no ejecutables no puedan ser ejecutadas, bloqueando así intentos de ejecutar código malicioso que haya sido inyectado en áreas no previstas para código ejecutable.
+
+### 8. Parchear regularmente las aplicaciones y sistemas operativos
+Mantener actualizado el software es crucial para protegerlo de vulnerabilidades conocidas, como los desbordamientos de búfer. Los parches y actualizaciones de seguridad ayudan a corregir fallos en el software que podrían ser explotados por atacantes.
+
+### 9. Realizar inspección de código manualmente con una lista de verificación para asegurar que el código cumpla ciertos criterios
+El análisis manual del código fuente, usando listas de verificación de seguridad, es una buena práctica para identificar vulnerabilidades que las herramientas automáticas pueden pasar por alto.
+
+### 10. Emplear la prevención de ejecución de datos (DEP) para marcar las regiones de memoria como no ejecutables
+El **DEP** es una característica de seguridad que evita la ejecución de código en áreas de memoria no ejecutables. Esto ayuda a proteger las aplicaciones contra ataques de desbordamiento de búfer, ya que evita que el código inyectado en la pila o el heap se ejecute.
+
+### 11. Implementar comprobaciones de integridad de punteros de código para detectar si un puntero de código ha sido alterado
+Las comprobaciones de integridad de punteros de código ayudan a detectar alteraciones en los punteros de ejecución, lo que podría ser un indicio de un ataque de desbordamiento de búfer. Esta técnica valida que los punteros de código no se hayan modificado de manera maliciosa.
