@@ -64,3 +64,133 @@ Es el acto de aprovechar esta vulnerabilidad mediante un exploit, que puede ser 
 - Pasos siguientes:
   - Elevar privilegios si es necesario (e.g., exploits de escalada de privilegios).
   - Establecer mecanismos de persistencia para conservar el acceso.
+
+--- 
+
+# Buffer Overflow
+
+Un **Buffer Overflow** ocurre cuando un programa escribe más datos en un buffer de los que este puede manejar, sobrescribiendo datos adyacentes en la memoria. Este comportamiento puede ser explotado para ejecutar código malicioso o causar fallos en el programa.
+
+---
+
+## Tipos de Buffer Overflow
+
+1. **Stack-based Buffer Overflow**  
+   Este tipo de ataque ocurre en la pila (stack). Es el más común y ocurre cuando los datos sobrescriben direcciones de retorno o variables locales.
+
+2. **Heap-based Buffer Overflow**  
+   Este tipo de ataque ocurre en el montón (heap). Es más difícil de explotar, pero puede permitir al atacante sobrescribir estructuras de datos en memoria dinámica.
+
+---
+
+## Ejemplo básico en C
+
+A continuación, un ejemplo simple que demuestra un **Stack-based Buffer Overflow**:
+
+```c
+#include <stdio.h>
+#include <string.h>
+
+void vulnerable_function(char *input) {
+    char buffer[8]; // Buffer con tamaño fijo
+    strcpy(buffer, input); // Copia sin verificar el tamaño del input
+    printf("Buffer: %s\n", buffer);
+}
+
+int main(int argc, char *argv[]) {
+    if (argc < 2) {
+        printf("Usage: %s <input>\n", argv[0]);
+        return 1;
+    }
+    vulnerable_function(argv[1]);
+    return 0;
+}
+```
+
+# Windows Buffer Overflow Exploitation
+
+La explotación de **Buffer Overflow** en sistemas Windows es una técnica común utilizada para ejecutar código malicioso, obteniendo acceso no autorizado o control total sobre el sistema objetivo. Este tipo de explotación a menudo se realiza manipulando la memoria del programa.
+
+---
+
+## Fundamentos de Windows Buffer Overflow
+
+1. **EIP (Extended Instruction Pointer)**  
+   El objetivo principal de un ataque de Buffer Overflow es sobrescribir el registro **EIP**, que contiene la dirección de la siguiente instrucción a ejecutar. Al controlar el EIP, el atacante puede redirigir el flujo de ejecución del programa.
+
+2. **Protecciones comunes en Windows**  
+   Aunque modernas versiones de Windows implementan protecciones contra Buffer Overflow, estas pueden ser eludidas bajo ciertas condiciones:
+   - **DEP (Data Execution Prevention)**: Marca ciertas regiones de memoria como no ejecutables.
+   - **ASLR (Address Space Layout Randomization)**: Aleatoriza las direcciones base de bibliotecas y ejecutables.
+   - **SafeSEH (Safe Structured Exception Handling)**: Verifica excepciones para evitar manipulaciones maliciosas.
+
+---
+
+## Etapas de la explotación
+
+1. **Identificación de la vulnerabilidad**  
+   Encontrar un software vulnerable que permita escribir más datos de los que el buffer puede manejar.
+
+2. **Control del EIP**  
+   Sobrescribir el EIP con una dirección controlada por el atacante, generalmente apuntando a un **shellcode**.
+
+3. **Creación del shellcode**  
+   Desarrollar un payload que se ejecute en el sistema objetivo. Por ejemplo:
+   - Ejecutar una shell reversa.
+   - Cargar un ejecutable malicioso.
+
+4. **Evasión de protecciones**  
+   Diseñar el exploit para evitar DEP, ASLR u otras protecciones.
+
+---
+
+## Ejemplo básico: Windows Buffer Overflow
+
+El siguiente ejemplo ilustra cómo enviar una cadena maliciosa para provocar un **Buffer Overflow** y sobrescribir el registro EIP.
+
+### Código vulnerable en C:
+
+```c
+#include <stdio.h>
+#include <string.h>
+
+void vulnerable_function(char *input) {
+    char buffer[256]; // Buffer estático
+    strcpy(buffer, input); // Copia sin límites
+    printf("Buffer: %s\n", buffer);
+}
+
+int main(int argc, char *argv[]) {
+    if (argc < 2) {
+        printf("Usage: %s <input>\n", argv[0]);
+        return 1;
+    }
+    vulnerable_function(argv[1]);
+    return 0;
+}
+```
+
+# Return Oriented Programming (ROP)
+
+**Return Oriented Programming (ROP)** es una técnica avanzada de explotación que permite ejecutar código malicioso sin inyectar código directamente, evadiendo protecciones como **DEP (Data Execution Prevention)**.
+
+---
+
+# Exploit Chaining
+
+**Exploit Chaining** es la técnica de combinar múltiples vulnerabilidades o exploits para maximizar el impacto de un ataque. Este enfoque permite a un atacante avanzar progresivamente en un sistema objetivo, superando restricciones individuales o elevando privilegios.
+
+## ¿Cómo funciona Exploit Chaining?
+
+Un ataque con Exploit Chaining consiste en:
+1. **Identificar varias vulnerabilidades**  
+   Las fallas individuales pueden ser limitadas en impacto, pero al combinarse pueden lograr un objetivo mayor.
+
+2. **Encadenar las vulnerabilidades**  
+   Cada exploit prepara el terreno para el siguiente, formando una secuencia lógica de acciones.
+
+3. **Ejecutar el ataque completo**  
+   Se implementan los exploits en orden para lograr el acceso o control deseado.
+
+---
+
