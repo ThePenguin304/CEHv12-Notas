@@ -116,10 +116,114 @@ La explotación de **Buffer Overflow** en sistemas Windows es una técnica comú
 
 ## Principales comandos de PowerView
 
-### 1. Enumeración de usuarios
-
-- **Lista de todos los usuarios en el dominio**:
+- **Enumerar dominios**:
 ```powershell
-Get-DomainUser
+Get-ADDomain
+Get-NetDomain
+Get-DomainSID
 ```
+
+- **Enumerar políticas de dominio**:
+```powershell
+Get-DomainPolicy
+(Get-DomainPolicy)."SystemAccess"
+(Get-DomainPolicy)."kerberospolicy"
+```
+
+- **Enumerar Domain Controllers (DC)**:
+```powershell
+Get-NetDomainController
+```
+
+- **Enumerar Domain Users**:
+```powershell
+Get-NetUser
+Get-NetLoggedon -ComputerName <computer-name>
+Get-UserProperty –Properties pwdlastset
+Find-LocalAdminAccess Invoke-EnumerateLocalAdmin
+```
+
+- **Enumerar Domain Computers**:
+```powershell
+Get-NetComputer
+Get-NetComputer - OperatingSystem "*Server 2022*"
+Get-NetComputer -Ping
+```
+
+- **Enumerar Domain Groups**:
+```powershell
+Get-NetGroup
+Get-NetGroup -Domain <targetdomain>
+Get-NetGroup 'Domain Administrators'
+Get-NetGroup “*admin*”
+Get-NetGroupMember - GroupName "Domain Admins"
+Get-NetGroup -UserName <"username">
+Get-NetLocalGroup - ComputerName <computername>
+Get-NetLoggedon - ComputerName <DomainName>
+Get-LastLoggedOn - ComputerName <DomainName>
+```
+
+- **Enumerar Domain Shares**:
+```powershell
+Invoke-ShareFinder -Verbose
+Get-NetShare
+Get-NetFileServer -Verbose
+Invoke-FileFinder
+```
+
+- **Enumerar GPO**:
+```powershell
+Get-NetGPO Get-NetGPO| select displayname
+Get-NetOU
+```
+
+- **Enumerar ACL**:
+```powershell
+Get-ObjectAcl -
+SamAccountName "users" - ResolveGUIDs
+Get-NetGPO | %{Get-ObjectAcl -ResolveGUIDs - Name $_.Name}
+Invoke-ACLScanner - ResolveGUIDs
+Get-PathAcl -Path \\Windows11\Users (Works only with the shared folder)
+```
+
+---
+
+## Herramientas
+
+### BloodHound
+**BloodHound** es una herramienta gráfica utilizada para enumerar y analizar relaciones dentro de un dominio de Active Directory (AD). Es particularmente útil para identificar rutas hacia objetivos de alto valor, como cuentas de administrador de dominio.
+
+Casos de uso:
+- Identificación de configuraciones inseguras (e.g., permisos excesivos en objetos).
+- Descubrimiento de relaciones ocultas que pueden facilitar el movimiento lateral.
+- Priorización de objetivos durante un pentest.
+
+## GhostPack
+
+GhostPack es una colección de herramientas desarrolladas en C# para tareas de post-explotación en Windows. Incluye herramientas que permiten a los atacantes realizar diversas acciones después de haber comprometido un sistema Windows.
+
+Herramientas dentro de GhostPack:
+- Seatbelt: Herramienta para la recolección de información de post-explotación y análisis de privilegios en sistemas Windows.
+- Rubeus: Herramienta de Kerberos para la explotación y manipulación de tickets de autenticación en Active Directory.
+- SharpSploit: Biblioteca que permite la ejecución de varios ataques de post-explotación, como inyecciones de DLL y ejecución de código remoto.
+
+Casos de uso:
+- Escalada de privilegios: Usando técnicas de inyección de código y abuso de configuraciones inseguras.
+- Post-explotación: Recolección de información sobre usuarios, grupos y configuraciones de red.
+- Explotación de credenciales: Obtención y manipulación de credenciales a través de Kerberos.
+
+## Seatbelt
+Seatbelt es una herramienta de post-explotación que se utiliza para auditar y explorar los privilegios y configuraciones del sistema en máquinas Windows. Su objetivo principal es facilitar la recolección de información para determinar si es posible una escalada de privilegios o movimiento lateral.
+
+Características principales:
+- Recolección de información: Recopila detalles sobre el sistema, usuarios, grupos, y configuraciones de seguridad.
+- Pruebas de privilegios: Evalúa las configuraciones y permite probar el acceso a recursos sensibles.
+- Soporte para PowerShell: Puede ejecutarse directamente desde PowerShell para auditar sistemas comprometidos.
+
+Casos de uso:
+- Auditoría de privilegios: Identificar cuentas de usuarios con privilegios elevados y configuraciones inseguras.
+- Evaluación de seguridad: Determinar si un atacante podría escalar privilegios en el sistema comprometido.
+
+## OllyDbg
+OllyDbg es un depurador estático para programas de Windows que permite el análisis de código binario en busca de vulnerabilidades. Es ampliamente utilizado por los analistas de malware y los pentesters para analizar binarios y estudiar su comportamiento.
 
