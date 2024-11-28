@@ -69,7 +69,7 @@ La escalada de privilegios es una técnica en ciberseguridad mediante la cual un
   1. Buscar archivos `unattend.xml` en directorios del sistema.
   2. Extraer información sensible como contraseñas en texto plano.
 
-### Pivoting y Relaying
+### 7. Pivoting y Relaying
 #### **Pivoting**
 - **Descripción**: Usar una máquina comprometida como punto intermedio para atacar otras en la red.
 - **Pasos**:
@@ -84,7 +84,7 @@ La escalada de privilegios es una técnica en ciberseguridad mediante la cual un
   2. Interceptar una solicitud de autenticación.
   3. Usar las credenciales capturadas para autenticarse contra otro recurso.
 
-### Misconfigured NFS (Puerto 2049)
+### 8. Misconfigured NFS (Puerto 2049)
 - **Descripción**: Configuraciones incorrectas de sistemas de archivos en red (NFS) permiten acceso no autorizado.
 - **Procedimiento**:
   1. Enumerar recursos compartidos con herramientas como *showmount*.
