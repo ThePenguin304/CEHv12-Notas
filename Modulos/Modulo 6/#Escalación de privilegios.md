@@ -95,3 +95,40 @@ La escalada de privilegios es una técnica en ciberseguridad mediante la cual un
 - **Procedimiento**:
   1. Identificar servicios RPC expuestos en la red.
   2. Explotar la configuración incorrecta para ejecutar comandos remotos.
+ 
+---
+
+## Cómo protegerse ante escaladas de privilegios
+
+1. Restringir los privilegios de inicio de sesión interactivo
+2. Ejecutar usuarios y aplicaciones con los privilegios más bajos
+3. Implementar la autenticación y autorización multifactor
+4. Ejecutar servicios como cuentas sin privilegios
+5. Implementar una metodología de separación de privilegios para limitar el alcance de errores y fallos de programación
+6. Usar una técnica de cifrado para proteger datos confidenciales
+7. Reducir la cantidad de código que se ejecuta con un privilegio en particular
+8. Realizar la depuración mediante comprobadores de límites y pruebas de estrés
+9. Probar exhaustivamente el sistema para detectar errores y fallos de codificación de aplicaciones
+10. Aplicar parches y actualizar el kernel con regularidad
+11. Cambie la configuración de UAC a “Notificar siempre”
+12. Restringa a los usuarios la posibilidad de escribir archivos en las rutas de búsqueda de las aplicaciones
+13. Supervise continuamente los permisos del sistema de archivos mediante herramientas de auditoría
+14. Reduzca los privilegios de los usuarios y grupos para que solo los administradores legítimos puedan realizar cambios en el servicio
+15. Use herramientas de listas blancas para identificar y bloquear software malicioso
+16. Use rutas totalmente calificadas en todas las aplicaciones de Windows
+17. Asegúrese de que todos los ejecutables se coloquen en directorios protegidos contra escritura
+18. En macOS, haga que los archivos plist sean de solo lectura
+19. Bloquee utilidades del sistema no deseadas o software que pueda usarse para programar tareas
+20. Aplique parches y actualice periódicamente el servidor web
+
+## Defensa contra vulnerabilidades Spectre y Meltdown
+
+1. Actualice y aplique parches de forma regular a los sistemas operativos y al firmware
+2. Habilite la supervisión continua de aplicaciones y servicios críticos que se ejecutan en el sistema y la red
+3. Aplique parches de forma regular al software vulnerable, como los navegadores
+4. Instale y actualice bloqueadores de anuncios y software antimalware para bloquear la inyección de malware a través de sitios web comprometidos
+5. Habilite medidas de protección tradicionales, como herramientas de seguridad de puntos finales, para evitar el acceso no autorizado al sistema
+6. Bloquee servicios y aplicaciones que permitan a usuarios sin privilegios ejecutar código
+7. Nunca instale software no autorizado ni acceda a sitios web no confiables desde sistemas que almacenan información confidencial
+8. Use soluciones de prevención de pérdida de datos (DLP) para evitar la fuga de información crítica de la memoria de tiempo de ejecución
+9. Consulte con frecuencia al fabricante para obtener actualizaciones del BIOS y siga las instrucciones proporcionadas por el fabricante para instalar las actualizaciones
